@@ -1,0 +1,157 @@
+ESTRUCTURA DEL MODULO signaling.rs
+===================================
+
+Archivo: C:/Users/alrom/HumanBrain/crates/neurons/src/signaling.rs
+Lineas: 214
+Tests: 3/3 passing
+
+ESTRUCTURA DEL CODIGO
+---------------------
+
+[Lineas 1-10] Documentacion del modulo
+  - Key pathways description
+  - Biological pathways overview
+
+[Lineas 11-12] Imports
+  - serde::{Deserialize, Serialize}
+
+[Lineas 13-45] struct IntracellularSignaling
+  Campos (10 total):
+    - camp: f64              // cAMP concentration (microM)
+    - pka_activity: f64      // PKA activity (0-1)
+    - ip3: f64               // IP3 concentration (microM)
+    - dag: f64               // DAG concentration (microM)
+    - pkc_activity: f64      // PKC activity (0-1)
+    - calcium: f64           // Ca2+ concentration (microM)
+    - cam_ca4: f64           // Ca4-CaM complex (0-1)
+    - camkii_activity: f64   // CaMKII activity (0-1)
+    - creb_phospho: f64      // pCREB (0-1)
+    - ieg_expression: f64    // IEG expression (0-1)
+
+[Lineas 47-62] impl Default
+  Valores fisiologicos basales:
+    - camp: 0.1 microM
+    - pka_activity: 0.1
+    - ip3: 0.01 microM
+    - dag: 0.01 microM
+    - pkc_activity: 0.05
+    - calcium: 0.0001 microM (100 nM)
+    - cam_ca4: 0.0
+    - camkii_activity: 0.0
+    - creb_phospho: 0.1
+    - ieg_expression: 0.0
+
+[Lineas 64-167] impl IntracellularSignaling
+  
+  Metodo 1: activate_gs_pathway() [68-81]
+    Entrada: receptor_activation (0-1), dt (s)
+    Funcion: Via Gs -> cAMP -> PKA
+    Ecuaciones:
+      - camp_production = receptor_activation * 0.5
+      - camp_degradation = camp * 2.0
+      - pka_activity = Hill equation (n=2, Kd=0.3)
+  
+  Metodo 2: activate_gq_pathway() [86-100]
+    Entrada: receptor_activation (0-1), dt (s)
+    Funcion: Via Gq -> IP3/DAG -> PKC
+    Ecuaciones:
+      - ip3/dag += plc_activity * 0.3 * dt
+      - ip3 *= 0.9 (rapid decay)
+      - dag *= 0.95
+      - pkc_activity = f(DAG, Ca2+)
+  
+  Metodo 3: update_calcium_signaling() [105-127]
+    Entrada: ca_influx (microM/s), dt (s)
+    Funcion: Via Ca2+ -> CaM -> CaMKII
+    Ecuaciones:
+      - d[Ca]/dt = influx - extrusion_rate * (Ca - baseline)
+      - cam_ca4 = Hill equation (n=4, Kd=0.001)
+      - camkii += Ca4-CaM activation + autophosphorylation
+      - camkii *= 0.98 (slow PP1 dephosphorylation)
+  
+  Metodo 4: update_gene_expression() [132-146]
+    Funcion: Via PKA/CaMKII -> CREB -> IEG
+    Ecuaciones:
+      - creb_kinase = 0.5*PKA + 0.5*CaMKII
+      - d[pCREB]/dt = (kinase - pCREB) * 0.05
+      - ieg_expression += 0.01 * dt if pCREB > 0.5
+  
+  Metodo 5: step() [149-154]
+    Funcion: Integracion completa de todas las vias
+    Llama a: activate_gs, activate_gq, update_calcium, update_gene
+  
+  Metodo 6: synaptic_weight_modulation() [160-166]
+    Output: Multiplicador de peso sinaptico (1.0-1.5)
+    Ecuacion:
+      - ltp_signal = 0.7*CaMKII + 0.3*PKA
+      - weight = 1.0 + 0.5*ltp_signal
+
+[Lineas 169-214] Tests
+  
+  Test 1: test_camp_pka [172-184]
+    - Activa Gs pathway (80% receptor)
+    - Verifica equilibrio cAMP (~0.2 microM)
+    - Verifica PKA activation (>20%)
+  
+  Test 2: test_calcium_camkii [188-203]
+    - Simula Ca2+ influx sostenido
+    - Verifica Ca2+ sube por encima de baseline
+    - Verifica equilibrio dinamico
+  
+  Test 3: test_ltp_modulation [206-213]
+    - Establece CaMKII alto (0.8)
+    - Verifica LTP (weight > 1.0)
+    - Verifica upper bound (weight < 1.6)
+
+PARAMETROS BIOFISICOS CLAVE
+----------------------------
+
+Concentraciones (microM):
+  cAMP:     0.1 (basal) -> 0.2-0.4 (activo)
+  IP3:      0.01 (basal) -> 0.05-0.2 (activo)
+  DAG:      0.01 (basal) -> 0.05-0.2 (activo)
+  Ca2+:     0.0001 (basal, 100nM) -> 0.001-0.01 (activo, 1-10 microM)
+
+Constantes de disociacion (Kd):
+  PKA-cAMP:     0.3 microM
+  CaM-Ca:       0.001 microM
+
+Cooperatividad (Hill coefficient n):
+  PKA binding:  2.0
+  CaM binding:  4.0
+
+Tasas (1/s):
+  cAMP degradation:     2.0
+  Ca2+ extrusion:       10.0
+  IP3 decay:            ~100 (tau ~ 10ms)
+  DAG decay:            ~50 (tau ~ 20ms)
+  CaMKII dephospho:     ~0.02 (tau ~ 50s)
+
+ECUACIONES MATEMATICAS PRINCIPALES
+-----------------------------------
+
+1. Hill equation (receptor binding):
+   activity = [ligand]^n / (Kd^n + [ligand]^n)
+
+2. First-order kinetics (degradation):
+   d[X]/dt = production - degradation_rate * [X]
+
+3. Calcium homeostasis:
+   d[Ca]/dt = influx - extrusion_rate * (Ca - Ca_baseline)
+
+4. CaMKII autophosphorylation (positive feedback):
+   d[CaMKII]/dt = Ca4-CaM_activation + CaMKII * autophospho_rate - PP1_dephospho
+
+5. Gene expression (threshold):
+   d[IEG]/dt = transcription_rate * H(pCREB - threshold) - decay_rate * [IEG]
+
+ESTADO FINAL
+------------
+
+OK Modulo completo y funcional
+OK Tests passing
+OK Integracion con lib.rs
+OK Documentacion detallada
+OK Sin commits
+
+FASE 4: COMPLETADA

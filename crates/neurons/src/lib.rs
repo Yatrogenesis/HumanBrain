@@ -16,9 +16,13 @@
 pub mod compartmental;
 pub mod channels;
 pub mod morphology;
+pub mod signaling;
+pub mod swc_parser;
 
 pub use compartmental::{Compartment, MultiCompartmentalNeuron, CompartmentType};
 pub use channels::{IonChannel, HodgkinHuxleyNa, HodgkinHuxleyK, CalciumChannel, NMDAChannel};
+pub use signaling::IntracellularSignaling;
+pub use swc_parser::{SWCPoint, SWCMorphology};
 pub use morphology::{NeuronMorphology, DendriticTree};
 
 use thiserror::Error;

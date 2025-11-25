@@ -11,8 +11,6 @@ members = [
     "crates/basal-ganglia",
     "crates/amygdala",
     "crates/cerebellum",
-    "crates/hypothalamus",
-    "crates/brainstem",
     "crates/connectivity",
     "crates/cognition",
     "crates/consciousness",
@@ -74,8 +72,6 @@ thalamus = { path = "crates/thalamus" }
 basal-ganglia = { path = "crates/basal-ganglia" }
 amygdala = { path = "crates/amygdala" }
 cerebellum = { path = "crates/cerebellum" }
-hypothalamus = { path = "crates/hypothalamus" }
-brainstem = { path = "crates/brainstem" }
 connectivity = { path = "crates/connectivity" }
 cognition = { path = "crates/cognition" }
 consciousness = { path = "crates/consciousness" }
