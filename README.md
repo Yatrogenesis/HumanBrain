@@ -405,11 +405,11 @@ MIT OR Apache-2.0
 If you use HumanBrain in research, please cite:
 
 ```bibtex
-@software{humanbrain2024,
+@software{humanbrain2025,
   title = {HumanBrain: A Comprehensive Human Brain Simulator},
   author = {HumanBrain Contributors},
-  year = {2024},
-  url = {https://github.com/yourusername/HumanBrain}
+  year = {2025},
+  url = {https://github.com/yatrogenesis/HumanBrain}
 }
 ```
 
