@@ -55,3 +55,5 @@ pub mod constants {
     pub const R_A: f64 = 100.0;
 }
 
+pub mod channels_advanced;
+pub use channels_advanced::{AdvancedChannelState, Nav1_1, Nav1_6, Kv1_1, Kv3_1, Kv4_2, Kv7_M, Cav1_2, Cav2_1, Cav2_2, Cav3_1, SK_Channel, BK_Channel, HCN_Channel, NMDA_Advanced};

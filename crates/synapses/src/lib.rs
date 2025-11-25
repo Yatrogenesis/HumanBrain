@@ -349,3 +349,5 @@ mod tests {
         assert_eq!(network.get_incoming_synapses(1).len(), 1);
     }
 }
+pub mod structural_plasticity;
+pub use structural_plasticity::{DendriticSpine, SpineType, StructuralPlasticityManager, AxonalSprouting};

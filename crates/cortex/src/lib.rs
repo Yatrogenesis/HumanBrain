@@ -151,3 +151,5 @@ mod tests {
         assert!(cortex.time > 0.0);
     }
 }
+pub mod oscillations;
+pub use oscillations::{OscillationBand, BrainOscillations};
