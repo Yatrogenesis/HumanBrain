@@ -1,0 +1,11 @@
+[package]
+name = "synapses"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+ndarray = { workspace = true }
+rand = { workspace = true }
+rand_distr = { workspace = true }
+serde = { workspace = true }
+thiserror = { workspace = true }

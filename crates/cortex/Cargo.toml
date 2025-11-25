@@ -1,0 +1,15 @@
+[package]
+name = "cortex"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+neurons = { workspace = true }
+synapses = { workspace = true }
+glia = { workspace = true }
+metabolism = { workspace = true }
+ndarray = { workspace = true }
+serde = { workspace = true }
+thiserror = { workspace = true }
+rand = { workspace = true }
+rayon = { workspace = true }

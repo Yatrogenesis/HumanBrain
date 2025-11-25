@@ -1,0 +1,9 @@
+[package]
+name = "cognition"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+ndarray = { workspace = true }
+serde = { workspace = true }
+thiserror = { workspace = true }
