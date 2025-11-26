@@ -2,6 +2,7 @@
 
 A production-grade biologically realistic human brain simulator implemented in Rust, with GPU-accelerated physics and complete anatomical integration addressing fundamental limitations of existing brain simulation approaches.
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17720224.svg)](https://doi.org/10.5281/zenodo.17720224)
 [![License](https://img.shields.io/badge/license-MIT%2FApache--2.0-blue.svg)](LICENSE)
 [![Rust](https://img.shields.io/badge/rust-1.70%2B-orange.svg)](https://www.rust-lang.org)
 [![GPU](https://img.shields.io/badge/GPU-wgpu%20%2F%20Vulkan-green.svg)](https://wgpu.rs)
