@@ -1,0 +1,18 @@
+[package]
+name = "whole-brain"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[dependencies]
+cortex = { path = "../cortex" }
+hippocampus = { path = "../hippocampus" }
+thalamus = { path = "../thalamus" }
+basal-ganglia = { path = "../basal-ganglia" }
+connectivity = { path = "../connectivity" }
+
+serde = { workspace = true }
+ndarray = { workspace = true }
+anyhow = { workspace = true }
+thiserror = { workspace = true }

@@ -10,7 +10,7 @@
 
 use serde::{Deserialize, Serialize};
 
-#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 pub enum MSNType { D1, D2 }  // Medium spiny neurons
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -31,7 +31,7 @@ impl MediumSpinyNeuron {
         }
     }
 
-    pub fn step(&mut self, dt: f64, input: &[f64], dopamine: f64, current_time: f64) -> bool {
+    pub fn step(&mut self, dt: f64, input: &[f64], dopamine: f64, _current_time: f64) -> bool {
         self.dopamine_level = dopamine;
 
         // D1 excited by DA, D2 inhibited by DA
@@ -134,7 +134,7 @@ impl GlobalPallidus {
         for i in 0..self.gpi_neurons.min(d1_output.len()) {
             let inhibition = if d1_output[i] { -1.0 } else { 0.0 };
             let excitation = if i < stn_output.len() && stn_output[i] { 1.0 } else { 0.0 };
-            self.gpi_activity[i] = (1.0 + inhibition + excitation).max(0.0);
+            self.gpi_activity[i] = (1.0_f64 + inhibition + excitation).max(0.0);
         }
 
         // GPi inhibits thalamus - output is disinhibition
