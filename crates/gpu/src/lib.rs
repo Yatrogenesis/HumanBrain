@@ -2,8 +2,13 @@
 //!
 //! This module provides massively parallel computation for Hodgkin-Huxley
 //! neurons and cable equations, targeting 100-400× speedup over CPU.
+//!
+//! ## Modules
+//! - `compute`: Legacy point neuron HH simulator
+//! - `cable_simulator`: **NEW** Multi-compartmental cable equation with full tree topology
 
 pub mod compute;
+pub mod cable_simulator;
 
 use anyhow::Result;
 use bytemuck::{Pod, Zeroable};
