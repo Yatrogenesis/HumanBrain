@@ -25,7 +25,7 @@ HumanBrain represents a paradigm shift in computational neuroscience: **no reduc
 
 ## Hardware Requirements
 
-### ✅ Tested Configuration: HP Victus 15
+### [OK] Tested Configuration: HP Victus 15
 - **CPU**: Intel i7-12th gen H-series
 - **RAM**: 16 GB
 - **GPU**: NVIDIA GeForce RTX 3050 (4GB VRAM, Ampere, Vulkan 1.3)

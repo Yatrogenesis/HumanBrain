@@ -15,8 +15,8 @@ HumanBrain implements:
 - [OK] Complete thalamus (VPL, LGN, MGN, TRN)
 - [OK] GPU acceleration with wgpu compute shaders
 - [OK] Adaptive feedback loop with attractor analysis
-- ⚠️ Simplified glia (metabolic constraints only)
-- ⚠️ No individual synapse models (aggregated conductances)
+- [WARNING] Simplified glia (metabolic constraints only)
+- [WARNING] No individual synapse models (aggregated conductances)
 
 ---
 
@@ -284,12 +284,12 @@ impl SubstantiaNigra {
 
 | Feature | HumanBrain | NEURON | Brian2 | ANNarchy | Nengo |
 |---------|------------|--------|--------|----------|-------|
-| Multi-compartmental | ✓ (152) | ✓ (unlimited) | ✓ | ✗ | ✗ |
-| GPU Acceleration | ✓ (wgpu) | ✓ (CoreNEURON) | ✓ (GeNN) | ✓ | ✗ |
-| Anatomical Connectivity | ✓ (8 pathways) | Manual | Manual | Manual | ✓ |
-| Adaptive Feedback | ✓ | ✗ | ✗ | ✗ | ✗ |
-| Whole-Brain Scale | ✓ | ✓ | ~ | ~ | ✓ |
-| Real-Time | ~ (1.5x) | ✗ | ✗ | ~ | ✓ |
+| Multi-compartmental | [OK] (152) | [OK] (unlimited) | [OK] | [X] | [X] |
+| GPU Acceleration | [OK] (wgpu) | [OK] (CoreNEURON) | [OK] (GeNN) | [OK] | [X] |
+| Anatomical Connectivity | [OK] (8 pathways) | Manual | Manual | Manual | [OK] |
+| Adaptive Feedback | [OK] | [X] | [X] | [X] | [X] |
+| Whole-Brain Scale | [OK] | [OK] | ~ | ~ | [OK] |
+| Real-Time | ~ (1.5x) | [X] | [X] | ~ | [OK] |
 | Language | Rust | Python/C++ | Python | Python | Python |
 
 ---
