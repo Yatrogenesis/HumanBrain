@@ -9,6 +9,7 @@
 
 pub mod compute;
 pub mod cable_simulator;
+pub mod feedback_loop;
 
 use anyhow::Result;
 use bytemuck::{Pod, Zeroable};
