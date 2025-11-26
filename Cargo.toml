@@ -18,7 +18,7 @@ members = [
     "crates/consciousness",
     "crates/visualization",
     "crates/cli",
-    "crates/gpu", "crates/analysis",
+    "crates/gpu", "crates/analysis", "crates/whole-brain",
 ]
 
 [workspace.package]
