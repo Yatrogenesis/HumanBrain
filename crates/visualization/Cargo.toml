@@ -2,8 +2,26 @@
 name = "visualization"
 version.workspace = true
 edition.workspace = true
+authors.workspace = true
+license.workspace = true
 
 [dependencies]
+# GPU rendering (same as simulation)
+wgpu = "0.19"
+winit = "0.29"
+pollster = "0.3"
+bytemuck = { version = "1.14", features = ["derive"] }
+
+# Math
+nalgebra = "0.33"
 ndarray = { workspace = true }
-serde = { workspace = true }
+
+# Error handling
+anyhow = { workspace = true }
 thiserror = { workspace = true }
+
+# Serialization
+serde = { workspace = true }
+
+[dependencies.gpu]
+path = "../gpu"
