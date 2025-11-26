@@ -24,6 +24,87 @@ pub struct GpuNeuronState {
     pub external_current: f32,
 }
 
+/// Advanced neuron state matching channels_advanced.wgsl
+#[repr(C)]
+#[derive(Copy, Clone, Debug, Pod, Zeroable)]
+pub struct AdvancedNeuronState {
+    pub voltage: f32,
+    // Nav1.1
+    pub nav1_1_m: f32,
+    pub nav1_1_h: f32,
+    // Nav1.6
+    pub nav1_6_m: f32,
+    pub nav1_6_h: f32,
+    // Kv1.1
+    pub kv1_1_n: f32,
+    // Kv3.1
+    pub kv3_1_n: f32,
+    // Kv4.2
+    pub kv4_2_m: f32,
+    pub kv4_2_h: f32,
+    // Kv7/M
+    pub kv7_m: f32,
+    // Cav1.2
+    pub cav1_2_m: f32,
+    pub cav1_2_h: f32,
+    // Cav2.1
+    pub cav2_1_m: f32,
+    pub cav2_1_h: f32,
+    // Cav3.1
+    pub cav3_1_m: f32,
+    pub cav3_1_h: f32,
+    // SK
+    pub sk_ca_i: f32,
+    // BK
+    pub bk_m: f32,
+    pub bk_ca_i: f32,
+    // HCN
+    pub hcn_m: f32,
+    // NMDA
+    pub nmda_m: f32,
+    // External current
+    pub i_ext: f32,
+    // Glutamate
+    pub glu: f32,
+    // Padding for GPU alignment
+    pub _pad0: f32,
+    pub _pad1: f32,
+    pub _pad2: f32,
+}
+
+impl Default for AdvancedNeuronState {
+    fn default() -> Self {
+        Self {
+            voltage: -70.0,
+            nav1_1_m: 0.05,
+            nav1_1_h: 0.6,
+            nav1_6_m: 0.05,
+            nav1_6_h: 0.6,
+            kv1_1_n: 0.32,
+            kv3_1_n: 0.32,
+            kv4_2_m: 0.1,
+            kv4_2_h: 0.9,
+            kv7_m: 0.0,
+            cav1_2_m: 0.01,
+            cav1_2_h: 0.9,
+            cav2_1_m: 0.01,
+            cav2_1_h: 0.9,
+            cav3_1_m: 0.01,
+            cav3_1_h: 0.9,
+            sk_ca_i: 0.05,
+            bk_m: 0.0,
+            bk_ca_i: 0.05,
+            hcn_m: 0.0,
+            nmda_m: 0.0,
+            i_ext: 0.0,
+            glu: 0.0,
+            _pad0: 0.0,
+            _pad1: 0.0,
+            _pad2: 0.0,
+        }
+    }
+}
+
 impl Default for GpuNeuronState {
     fn default() -> Self {
         Self {
