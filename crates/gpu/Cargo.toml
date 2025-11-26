@@ -5,7 +5,7 @@ edition = "2021"
 
 [dependencies]
 # GPU compute
-wgpu = "0.18"
+wgpu = "0.19"
 pollster = "0.3"
 bytemuck = { version = "1.14", features = ["derive"] }
 futures-intrusive = "0.5"
