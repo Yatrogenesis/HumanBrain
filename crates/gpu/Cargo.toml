@@ -1,0 +1,22 @@
+[package]
+name = "gpu"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# GPU compute
+wgpu = "0.18"
+pollster = "0.3"
+bytemuck = { version = "1.14", features = ["derive"] }
+futures-intrusive = "0.5"
+
+# Linear algebra
+ndarray = "0.15"
+
+# Serialization
+serde = { version = "1.0", features = ["derive"] }
+
+# Error handling
+anyhow = "1.0"
+thiserror = "1.0"
+
