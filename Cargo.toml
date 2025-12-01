@@ -19,6 +19,7 @@ members = [
     "crates/visualization",
     "crates/cli",
     "crates/gpu", "crates/analysis", "crates/whole-brain",
+    "crates/pharmacology",
 ]
 
 [workspace.package]
