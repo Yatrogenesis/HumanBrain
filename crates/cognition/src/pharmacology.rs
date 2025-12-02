@@ -28,7 +28,7 @@ impl Pharmacology {
             gaba_a_potentiation: 1.0 + 2.0 * concentration,
             anxiolytic: concentration,
             sedation: concentration,
-            amnesia: 0.5 * concentration,
+            amnesia: 0.5 * concentration, ..Default::default()
         }
     }
 
@@ -37,7 +37,7 @@ impl Pharmacology {
             serotonin_level: 1.0 + 1.5 * concentration,
             mood_elevation: concentration * 0.7,
             anxiety_reduction: concentration * 0.5,
-            sleep_disturbance: concentration * 0.3,
+            sleep_disturbance: concentration * 0.3, ..Default::default()
         }
     }
 
@@ -46,7 +46,7 @@ impl Pharmacology {
             dopamine_release: 2.0 + 3.0 * concentration,
             norepinephrine_release: 1.5 + 2.0 * concentration,
             arousal: concentration,
-            focus: concentration * 0.8,
+            focus: concentration * 0.8, ..Default::default()
         }
     }
 
@@ -55,7 +55,7 @@ impl Pharmacology {
             adenosine_antagonism: concentration,
             alertness: concentration * 0.7,
             arousal: concentration * 0.5,
-            jitteriness: if concentration > 0.7 { concentration - 0.7 } else { 0.0 },
+            jitteriness: if concentration > 0.7 { concentration - 0.7 } else { 0.0 }, ..Default::default()
         }
     }
 
@@ -64,7 +64,7 @@ impl Pharmacology {
             ht2a_agonism: concentration,
             perceptual_distortion: concentration,
             cognitive_flexibility: concentration * 0.8,
-            default_mode_disruption: concentration,
+            default_mode_disruption: concentration, ..Default::default()
         }
     }
 }

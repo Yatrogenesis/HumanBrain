@@ -299,12 +299,17 @@ impl OntologicalOscillator {
         }
 
         // Sort to find threshold
-        samples.sort_by(|a, b| b.partial_cmp(a).unwrap());
+        samples.sort_by(|a, b| a.partial_cmp(b).unwrap());
 
         let idx = ((1.0 - target_probability) * n_samples as f64) as usize;
         if idx < samples.len() {
             self.rare_threshold = samples[idx];
         }
+
+        // Reset counters after calibration
+        self.event_count = 0;
+        self.total_samples = 0;
+        self.history.clear();
     }
 
     /// Step the oscillator

@@ -7,3 +7,4 @@ edition.workspace = true
 ndarray = { workspace = true }
 serde = { workspace = true }
 thiserror = { workspace = true }
+rand = { workspace = true }
