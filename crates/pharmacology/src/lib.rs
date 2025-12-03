@@ -1,4 +1,4 @@
-//! Mechanistic Pharmacology Crate
+﻿//! Mechanistic Pharmacology Crate
 //! ================================
 //!
 //! First-principles biophysical models for drug-receptor interactions.
@@ -7,25 +7,28 @@
 //! # Key Modules
 //!
 //! ## Core Pharmacology
-//! - `receptor_mechanisms`: GABA_A receptor binding and modulation
-//! - `pharmacokinetics`: ADME modeling (absorption, distribution, metabolism, elimination)
-//! - `ion_dynamics`: Nernst-Planck equations for ion channels
+//! - : GABA_A receptor binding and modulation
+//! - : ADME modeling (absorption, distribution, metabolism, elimination)
+//! - : Nernst-Planck equations for ion channels
 //!
 //! ## Advanced Kinetics
-//! - `enzyme_kinetics`: Michaelis-Menten with saturation detection
-//! - `compartments`: Microanatomical drug distribution
-//! - `active_transport`: P-gp efflux and transporter dynamics
+//! - : Michaelis-Menten with saturation detection
+//! - : Microanatomical drug distribution
+//! - : P-gp efflux and transporter dynamics
 //!
 //! ## Receptor Dynamics
-//! - `receptor_trafficking`: Desensitization, internalization, tolerance
+//! - : Desensitization, internalization, tolerance
 //!
 //! ## Individual Variation
-//! - `pharmacogenomics`: CYP450 polymorphisms and phenotypes
-//! - `stochastic_resonance`: Chaotic threshold dynamics, rare events
+//! - : CYP450 polymorphisms and phenotypes
+//! - : Chaotic threshold dynamics, rare events
 //!
 //! ## Safety
-//! - `reactive_metabolites`: GSH balance and hepatotoxicity
-//! - `adverse_events`: Bayesian adverse event predictor
+//! - : GSH balance and hepatotoxicity
+//! - : Bayesian adverse event predictor
+//!
+//! ## Validation
+//! - : PET imaging and PK data from clinical studies
 //!
 //! # Author
 //! Francisco Molina Burgos (Yatrogenesis)
@@ -52,6 +55,9 @@ pub mod stochastic_resonance;
 pub mod reactive_metabolites;
 pub mod adverse_events;
 
+// Validation against clinical literature
+pub mod clinical_literature;
+
 // Re-exports for convenience
 pub use receptor_mechanisms::*;
 pub use enzyme_kinetics::{EnzymeKinetics, SaturationRegime, Cyp450Database};
@@ -59,3 +65,4 @@ pub use compartments::{MultiCompartmentModel, CompartmentType};
 pub use pharmacogenomics::{PharmacogenomicProfile, MetabolizerPhenotype, CypIsoform};
 pub use stochastic_resonance::OntologicalOscillator;
 pub use adverse_events::AdverseEventPredictor;
+pub use clinical_literature::{ClinicalLiteratureDb, ValidationResult, calculate_occupancy_from_ki};
