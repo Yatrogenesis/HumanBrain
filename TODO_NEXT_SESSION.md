@@ -1,12 +1,29 @@
 # TODO - Próxima Sesión Claude Code
 ## HumanBrain + Simulato-R_v2.0 Integration
 
-**Fecha:** 2025-12-03
-**Estado:** ChEMBL y Allen Atlas adapters implementados y pusheados
+**Fecha:** 2025-12-05
+**Estado:** PDSP Adapter implementado y pusheado
 
 ---
 
-## COMPLETADO ESTA SESIÓN (2025-12-03)
+## COMPLETADO ESTA SESIÓN (2025-12-05)
+
+1. [x] **PDSPAdapter implementado** (pdsp_adapter.rs - 584 líneas)
+   - PDSPKiData: Ki binding data structure
+   - SelectivityProfile: Receptor selectivity calculations
+   - Standard CNS receptors (Dopamine, Serotonin, Opioid, etc.)
+   - Reference Ki values for 8 common CNS drugs
+   - classify_affinity(): Ki classification
+   - ki_to_ec50_estimate(): Ki to EC50 conversion
+   - SourceAdapter trait implementation
+
+2. [x] **Build exitoso**: `cargo build -p materials-database` OK
+
+3. [x] **Git commit y push** a Simulato-R_v2.0 (commit b784b44)
+
+---
+
+## COMPLETADO SESIÓN ANTERIOR (2025-12-03)
 
 1. [x] **ChEMBLAdapter implementado** (chembl_adapter.rs - 600+ líneas)
    - fetch_molecules(): ~2.4M compounds
@@ -47,12 +64,7 @@
 
 ## PRÓXIMOS PASOS CRÍTICOS (En Orden)
 
-### 1. Crear PDSPAdapter
-**NIMH Psychoactive Drug Screening Program**
-**URL:** https://pdsp.unc.edu/databases
-**Datos:** Ki para ~60K compuestos vs receptores CNS
-
-### 2. Crear DrugBankAdapter (requiere licencia comercial)
+### 1. Crear DrugBankAdapter (requiere licencia comercial)
 **Para PK clínicos detallados**
 
 ### 3. Integrar adapters con HumanBrain
@@ -75,6 +87,7 @@
 
 | Archivo | Ubicación | Estado |
 |---------|-----------|--------|
+| pdsp_adapter.rs | Simulato-R_v2.0/crates/database/src/ | NUEVO (2025-12-05) |
 | chembl_adapter.rs | Simulato-R_v2.0/crates/database/src/ | NUEVO |
 | allen_adapter.rs | Simulato-R_v2.0/crates/database/src/ | NUEVO |
 | etl_pipeline.rs | Simulato-R_v2.0/crates/database/src/ | MODIFICADO |
@@ -103,15 +116,32 @@ C:/Users/pakom/
 
 ## GAPS CRÍTICOS RESTANTES
 
-1. **PDSP Adapter** - NO EXISTE (siguiente prioridad)
-2. **DrugBank Adapter** - NO EXISTE (requiere licencia)
-3. **UniProt Adapter** - NO EXISTE
-4. **IUPHAR/BPS Adapter** - NO EXISTE
-5. **Integración HumanBrain ↔ Simulato-R** - PENDIENTE
+1. **DrugBank Adapter** - NO EXISTE (requiere licencia comercial)
+2. **UniProt Adapter** - NO EXISTE
+3. **IUPHAR/BPS Adapter** - NO EXISTE
+4. **Integración HumanBrain ↔ Simulato-R** - PENDIENTE
+
+## ADAPTERS IMPLEMENTADOS
+
+| Adapter | Estado | Datos |
+|---------|--------|-------|
+| ChEMBL | LISTO | ~2.4M compounds, Ki/IC50/EC50 |
+| Allen Brain Atlas | LISTO | ~20K genes, 16 brain regions |
+| PDSP | LISTO | ~60K Ki values, CNS receptors |
 
 ---
 
-## COMMIT RECIENTE
+## COMMITS RECIENTES
+
+```
+commit b784b44
+Author: Claude
+Date: 2025-12-05
+
+feat(database): Add PDSP (NIMH Psychoactive Drug Screening Program) adapter for HumanBrain integration
+
+2 files changed, 584 insertions(+)
+```
 
 ```
 commit 0be4ce2
