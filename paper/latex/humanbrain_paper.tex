@@ -40,7 +40,7 @@
     \small \texttt{pako.molina@gmail.com}
 }
 
-\date{December 2025}
+\date{November 2025}
 
 \begin{document}
 
@@ -89,7 +89,7 @@ Each neuron consists of 152 compartments: soma (1), axon hillock (1), axon segme
 where $\tau$ is the membrane time constant, $d$ is compartment diameter, $R_i$ is axial resistance, and $C_m$ is membrane capacitance.
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.9\columnwidth]{fig2_cable_equation.png}
+    \includegraphics[width=0.9\columnwidth]{fig2_brain_connectivity.png}
     \caption{Cable equation discretization showing voltage propagation along compartments.}
     \label{fig:cable}
 \end{figure}
@@ -122,7 +122,7 @@ fn cable_equation(
 We implement 8 anatomically validated pathways (Table \ref{tab:pathways}) based on tract-tracing studies \cite{connectivity2020}.
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.9\columnwidth]{fig3_brain_regions.png}
+    \includegraphics[width=0.9\columnwidth]{fig3_action_potential.png}
     \caption{Anatomical connectivity between 8 brain regions.}
     \label{fig:regions}
 \end{figure}
@@ -186,7 +186,7 @@ Figure \ref{fig:scaling} demonstrates performance scaling with network size.
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.9\columnwidth]{fig5_scaling_analysis.png}
+    \includegraphics[width=0.9\columnwidth]{fig5_system_architecture.png}
     \caption{Scaling analysis: memory and FPS vs network size (100-100K neurons).}
     \label{fig:scaling}
 \end{figure}
