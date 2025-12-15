@@ -9,6 +9,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{graphicx}
+\graphicspath{{figures/}}
 \usepackage{booktabs}
 \usepackage{hyperref}
 \usepackage[margin=1in]{geometry}
@@ -39,7 +40,7 @@
     \small \texttt{pako.molina@gmail.com}
 }
 
-\date{\today}
+\date{December 2025}
 
 \begin{document}
 
@@ -51,6 +52,8 @@ We present HumanBrain, a high-performance neural simulation framework that combi
 \end{abstract}
 
 \textbf{Keywords:} neural simulation, GPU computing, multi-compartmental model, cable equation, brain connectivity
+
+\noindent\textbf{DOI:} \href{https://doi.org/10.5281/zenodo.17720224}{10.5281/zenodo.17720224}
 
 % 1. Introduction
 \section{Introduction}
@@ -65,6 +68,12 @@ Our contributions include:
     \item Real-time performance: 10K neurons @ 50-80 FPS
     \item Adaptive feedback control via attractor analysis
 \end{itemize}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\columnwidth]{fig1_neuron_architecture.png}
+    \caption{Multi-compartmental neuron architecture showing 152 compartments: soma, axon hillock, axon segments, and dendritic tree.}
+    \label{fig:architecture}
+\end{figure}
 
 % 2. Methods
 \section{Methods}
@@ -78,6 +87,12 @@ Each neuron consists of 152 compartments: soma (1), axon hillock (1), axon segme
 \end{equation}
 
 where $\tau$ is the membrane time constant, $d$ is compartment diameter, $R_i$ is axial resistance, and $C_m$ is membrane capacitance.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\columnwidth]{fig2_cable_equation.png}
+    \caption{Cable equation discretization showing voltage propagation along compartments.}
+    \label{fig:cable}
+\end{figure}
 
 \subsection{GPU Implementation}
 
@@ -105,6 +120,12 @@ fn cable_equation(
 \subsection{Inter-Regional Connectivity}
 
 We implement 8 anatomically validated pathways (Table \ref{tab:pathways}) based on tract-tracing studies \cite{connectivity2020}.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\columnwidth]{fig3_brain_regions.png}
+    \caption{Anatomical connectivity between 8 brain regions.}
+    \label{fig:regions}
+\end{figure}
 
 \begin{table}[h]
 \centering
@@ -145,7 +166,7 @@ Figure \ref{fig:performance} shows simulation performance across network sizes. 
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.9\columnwidth]{../exports/png/fig4_performance_benchmarks.png}
+    \includegraphics[width=0.9\columnwidth]{fig4_performance_benchmarks.png}
     \caption{GPU vs CPU performance comparison}
     \label{fig:performance}
 \end{figure}
@@ -158,13 +179,25 @@ GPU acceleration provides 28-45× speedup across operations:
     \item Network update: 38× speedup
 \end{itemize}
 
+
+\subsection{Scaling Analysis}
+
+Figure \ref{fig:scaling} demonstrates performance scaling with network size.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\columnwidth]{fig5_scaling_analysis.png}
+    \caption{Scaling analysis: memory and FPS vs network size (100-100K neurons).}
+    \label{fig:scaling}
+\end{figure}
+
 \subsection{Biological Accuracy}
 
 We validated our implementation against NEURON \cite{neuron2019} using standard protocols. Spike timing accuracy reached 98.5\%, comparable to established simulators (Figure \ref{fig:accuracy}).
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.9\columnwidth]{../exports/png/fig6_biological_accuracy.png}
+    \includegraphics[width=0.9\columnwidth]{fig6_biological_accuracy.png}
     \caption{Biological accuracy comparison}
     \label{fig:accuracy}
 \end{figure}
@@ -193,6 +226,8 @@ HumanBrain achieves the dual goals of biological accuracy and computational effi
 HumanBrain provides a practical tool for exploring neural dynamics at the intersection of cellular biophysics and network connectivity. By leveraging GPU computing, we enable interactive exploration of complex brain models previously requiring cluster computing.
 
 \textbf{Code Availability:} \url{https://github.com/Yatrogenesis/HumanBrain}
+
+\textbf{Archival:} \href{https://doi.org/10.5281/zenodo.17720224}{Zenodo DOI: 10.5281/zenodo.17720224}
 
 % Acknowledgments
 \section*{Acknowledgments}
