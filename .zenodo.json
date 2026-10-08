@@ -1,0 +1,27 @@
+{
+  "title": "HumanBrain: GPU-accelerated multi-compartmental brain simulation framework (research code)",
+  "upload_type": "software",
+  "creators": [
+    {
+      "name": "Molina-Burgos, Francisco",
+      "orcid": "0009-0008-6093-8267",
+      "affiliation": "Avermex Research Division"
+    }
+  ],
+  "license": "agpl-3.0-or-later",
+  "description": "<p>Rust framework for multi-compartmental neuron and whole-brain simulation experiments. Research code, not validated for clinical or diagnostic use. Version 1.1.1 corrects the bibliography (removes PubMed identifiers that pointed to unrelated articles), documents the PET occupancy example as a circular self-consistency check rather than an independent validation, and aligns the license to AGPL-3.0-or-later.</p>",
+  "keywords": [
+    "computational neuroscience",
+    "brain simulation",
+    "Rust",
+    "multi-compartmental models",
+    "GPU"
+  ],
+  "related_identifiers": [
+    {
+      "relation": "isSupplementTo",
+      "identifier": "https://github.com/Yatrogenesis/HumanBrain",
+      "scheme": "url"
+    }
+  ]
+}
