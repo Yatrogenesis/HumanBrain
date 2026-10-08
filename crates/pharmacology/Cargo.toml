@@ -4,7 +4,7 @@ version = "0.1.0"
 edition = "2021"
 authors = ["Francisco Molina Burgos <yatrogenesis@example.com>"]
 description = "Mechanistic pharmacology for neural simulation - receptor binding, ion dynamics, drug kinetics"
-license = "MIT"
+license = "AGPL-3.0-or-later"
 
 [dependencies]
 serde = { version = "1.0", features = ["derive"] }

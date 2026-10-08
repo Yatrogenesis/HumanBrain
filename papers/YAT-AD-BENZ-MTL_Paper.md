@@ -348,7 +348,7 @@ YAT-AD-BENZ-MTL represents a paradigm shift in AD treatment:
 
 1. Cummings J. Alzheimer's disease drug development pipeline: 2024. Alzheimers Dement. 2024.
 2. Scheltens P. Alzheimer's disease. Lancet. 2021;397:1577-1590.
-3. van Dyck CH. Aducanumab: first disease-modifying drug for Alzheimer's. N Engl J Med. 2023.
+3. van Dyck CH, Swanson CJ, Aisen P, et al. Lecanemab in Early Alzheimer's Disease. N Engl J Med. 2023;388:9-21 (PMID 36449413). [Corrected 2026-10-08: the previous entry attributed an aducanumab article to this PMID; this paper is about lecanemab. The aducanumab statements in this manuscript still need a verified primary reference.]
 4. Yatrogenesis Research Group. DDDE: Deterministic Drug Discovery Engine. Technical Report YAT-2025-002.
 
 ---

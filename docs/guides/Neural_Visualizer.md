@@ -408,7 +408,7 @@ Características deseadas:
 
 ## Licencia
 
-MIT License - HumanBrain Project
+AGPL-3.0-or-later - HumanBrain Project (see LICENSE)
 
 ---
 
