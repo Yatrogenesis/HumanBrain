@@ -31,9 +31,9 @@ iatrogene-sys ──────────────────────
 
 | Project | Purpose | Status |
 |---------|---------|--------|
-| CORTEXIA-Framework | Consciousness framework | Active |
+| CORTEXIA-Framework | Information integration framework | Active |
 | LIRS-Lab | Symbolic reasoning engine | Active |
-| Qualia-Naturalia | IIT 3.0 consciousness | Research |
+| Qualia-Naturalia | IIT 3.0 information integration measures | Research |
 | PP25-CHAOTIC_ATTRACTOR_COMPRESSION | Embedding compression | Published |
 | AION-CR | Regulatory compliance | Active |
 | yatrogenesis-ai | Type-safe ML | Active |
@@ -90,10 +90,9 @@ iatrogene-sys ──────────────────────
 - **Brain regions:** 16
 - **Coverage:** ~0.09% of Allen Atlas
 
-### 4.3 PET Validation Data (clinical_literature.rs)
-- **Validated drugs:** 16
-- **Average error:** 0.0%
-- **Pass rate:** 100%
+### 4.3 PET Reference Calibration Data (clinical_literature.rs)
+- **Calibrated reference drugs:** 16
+- **Status:** Internal algebraic self-consistency check (`FITTED:` EC50 derived from target occupancy; NOT an independent external empirical validation)
 
 ## 5. Required Adapters for Full Integration
 

@@ -1,6 +1,6 @@
-# HumanBrain: World-Class Anatomically Realistic Human Brain Simulator
+# HumanBrain: GPU-Accelerated Multi-Scale Human Brain Simulator
 
-A production-grade biologically realistic human brain simulator implemented in Rust, with GPU-accelerated physics and complete anatomical integration addressing fundamental limitations of existing brain simulation approaches.
+A computational neuroscience simulation framework implemented in Rust, with GPU-accelerated compartmental dynamics and multi-regional anatomical connectivity models.
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17720224.svg)](https://doi.org/10.5281/zenodo.17720224)
 [![License](https://img.shields.io/badge/license-AGPL--3.0--or--later-blue.svg)](LICENSE)
@@ -9,28 +9,28 @@ A production-grade biologically realistic human brain simulator implemented in R
 
 ## Overview
 
-HumanBrain represents a paradigm shift in computational neuroscience: **no reduccionismos, no simplismos** - complete biological realism at maximum level. This simulator integrates:
+HumanBrain is a research framework for multi-scale computational neuroscience modeling:
 
 - **GPU-Accelerated Multi-Compartmental Neurons** (wgpu compute shaders, 152 compartments/neuron)
-- **Complete Anatomical Integration** (8 biologically validated inter-regional pathways)
+- **Multi-Regional Anatomical Pathways** (8 literature-derived inter-regional pathways based on anatomical connectivity references)
 - **Attractor-Based Dynamics Analysis** (correlation dimension D₂, Lyapunov exponents λ₁)
 - **Adaptive Feedback Control** (homeostatic plasticity, activity-dependent regulation)
-- **Metabolic Constraints** (ATP, glucose, oxygen with neurovascular coupling)
-- **Glial Cell Dynamics** (astrocytes, oligodendrocytes, microglia)
-- **Layer-Specific Cortical Connectivity** (anatomically grounded, no placeholders)
+- **Metabolic Constraints** (ATP, glucose, oxygen with neurovascular coupling models)
+- **Glial Cell Dynamics** (astrocytes, oligodendrocytes, microglia models)
+- **Layer-Specific Cortical Connectivity** (anatomically grounded architectural templates)
 - **Real-Time 3D Visualization** (physical voltage mapping with camera controls)
 
-**Philosophy**: *"No quiero suficiencia, quiero realidad"* - World-class quality without shortcuts.
+**Philosophy**: *"No quiero suficiencia, quiero realidad"* - Rigorous biophysical modeling without unfounded claims.
 
 ---
 
 ## Hardware Requirements
 
-### [OK] Tested Configuration: HP Victus 15
+### Exploratory Configuration (Single-run observation): HP Victus 15
 - **CPU**: Intel i7-12th gen H-series
 - **RAM**: 16 GB
 - **GPU**: NVIDIA GeForce RTX 3050 (4GB VRAM, Ampere, Vulkan 1.3)
-- **Performance**: 10,000 neurons @ 50-80 FPS (scale=0.1)
+- **Performance Target**: Exploratory configuration for 10,000 neurons (scale=0.1; systematic benchmarking suite pending)
 
 ### Minimum Specifications
 - **CPU**: 4 cores (Intel i5-8th gen / AMD Ryzen 3000+)
@@ -58,9 +58,9 @@ cargo test --all
 ## Documentation
 
 **For complete documentation, see**:
-- [SCIENTIFIC_PAPER.md](docs/SCIENTIFIC_PAPER.md) - Full computational neuroscience paper
-- [TECHNICAL_PAPER.md](docs/TECHNICAL_PAPER.md) - Maximum-detail implementation guide
-- [BIOLOGICAL_ACCURACY.md](docs/BIOLOGICAL_ACCURACY.md) - Validation against experimental data
+- [Scientific_Paper.md](docs/Scientific_Paper.md) - Computational neuroscience modeling description
+- [Technical_Paper.md](docs/Technical_Paper.md) - Implementation guide
+- [Biological_Accuracy.md](docs/Biological_Accuracy.md) - Model fidelity analysis and literature parameter comparisons (unverified experimental validation)
 
 ---
 

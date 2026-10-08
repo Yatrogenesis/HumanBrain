@@ -13,7 +13,7 @@ Maximum-detail technical documentation for developers and researchers.
 - 152 compartments per neuron
 - Tree topology buffers
 - Forward Euler integration (dt=0.025-0.05ms)
-- Performance: 80 FPS for 10K neurons on RTX 3050
+- Performance target: ~80 FPS for 10K neurons on RTX 3050 (exploratory observation; benchmark suite pending)
 
 #### Feedback Loop ()
 - Adaptive homeostatic control

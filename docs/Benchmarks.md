@@ -1,6 +1,9 @@
 # Performance Benchmarks
 
-This document provides performance benchmarks for HumanBrain components.
+> [!NOTE]
+> Los valores y tablas en este documento representan estimaciones teóricas y proyecciones arquitectónicas («no verificado»). No existe una suite de benchmarking automatizada ni corrida reproducible para redes masivas (100,000+ neuronas) empaquetada en el repositorio.
+
+This document provides performance benchmarks and theoretical scaling projections for HumanBrain components.
 
 ## Test System
 
@@ -330,21 +333,21 @@ With statistical representation: 500 GB (feasible!)
 
 ## Scalability Analysis
 
-### Single Machine Limits
+### Single Machine Limits (Projected - No verificado)
 
 ```
-Neurons (fully simulated): 1-10 million
+Neurons (projected theoretical limit): 1-10 million
 Neurons (statistical): 100 million - 1 billion
-RAM required (full): 1.5 GB per 10,000 neurons
+RAM required (estimated): 1.5 GB per 10,000 neurons
 Time per step: 15 ms per 10,000 neurons (8 cores)
 ```
 
-### Multi-Machine Scaling (Projected)
+### Multi-Machine Scaling (Projected - No verificado)
 
 ```
 Nodes: 100
 Neurons per node: 1 million
-Total neurons: 100 million (fully simulated)
+Total neurons: 100 million (projected scaling - no verificado)
 Time per step: 15 ms (with efficient communication)
 Real-time factor: 1,500x slower
 ```

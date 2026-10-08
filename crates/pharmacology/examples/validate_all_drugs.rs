@@ -1,7 +1,8 @@
-//! Comprehensive Drug Validation Example
+//! Comprehensive Drug Parameter Check Example (Illustrative Mock)
 //!
-//! Validates all 79 drugs from the vademecum using the mechanistic
-//! pharmacology crate.
+//! Evaluates parameters for 79 drugs from the vademecum using the mechanistic
+//! pharmacology crate. NOTE: Literature comparison values in this example are
+//! illustrative mock values (no verificado; not an empirical or clinical validation).
 //!
 //! Run with: cargo run --example validate_all_drugs
 
@@ -22,8 +23,8 @@ struct DrugValidation {
 
 fn main() {
     println!("╔══════════════════════════════════════════════════════════════╗");
-    println!("║     HumanBrain - Comprehensive Drug Validation Suite         ║");
-    println!("║     Target Error: < 5%                                       ║");
+    println!("║     HumanBrain - Drug Parameter Consistency Demo             ║");
+    println!("║     (Illustrative Mock Literature References - No verificado) ║");
     println!("╚══════════════════════════════════════════════════════════════╝\n");
 
     // Initialize databases

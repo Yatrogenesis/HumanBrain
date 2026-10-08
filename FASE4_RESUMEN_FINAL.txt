@@ -3,7 +3,7 @@
                          COMPLETADA CON EXITO
 ===============================================================================
 
-OBJETIVO: Molecular Cascades 0/10 -> 9/10                        OK
+OBJETIVO: Implementacion de cascadas moleculares                OK
 
 ===============================================================================
 ENTREGABLES

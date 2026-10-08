@@ -1,22 +1,22 @@
-# Biological Accuracy - CORRECTED
+# Biological Fidelity & Architectural Scope
 
-This document details what aspects of HumanBrain are biologically realistic and what are simplifications.
+This document details what aspects of HumanBrain are modeled after biophysical literature and what are simplifications.
 
 ## Summary
 
-**Biological Realism Score: 8.5/10** (Updated 2025-11-26)
+**Model Scope and Architectural Inventory** (Updated 2025-11-26)
 
 HumanBrain implements:
 - [OK] Multi-compartmental cable equation (152 compartments/neuron)
 - [OK] Hodgkin-Huxley ion channel dynamics
-- [OK] 8 anatomically validated inter-regional pathways
-- [OK] Complete hippocampus (DG, CA3, CA1)
-- [OK] Complete basal ganglia (Striatum, GPe/GPi, STN, SNc)
-- [OK] Complete thalamus (VPL, LGN, MGN, TRN)
+- [OK] 8 literature-referenced inter-regional pathways
+- [OK] Implemented hippocampus module (DG, CA3, CA1)
+- [OK] Implemented basal ganglia module (Striatum, GPe/GPi, STN, SNc)
+- [OK] Implemented thalamus module (VPL, LGN, MGN, TRN)
 - [OK] GPU acceleration with wgpu compute shaders
-- [OK] Adaptive feedback loop with attractor analysis
-- [WARNING] Simplified glia (metabolic constraints only)
-- [WARNING] No individual synapse models (aggregated conductances)
+- [OK] Adaptive feedback loop with attractor dynamics exploration
+- [WARNING] Simplified glia (metabolic and homeostatic models)
+- [WARNING] Aggregated synaptic conductances
 
 ---
 
@@ -204,10 +204,10 @@ impl SubstantiaNigra {
 
 ---
 
-### 6. Anatomical Connectivity: 9/10 [OK] EXCELLENT
+### 6. Anatomical Connectivity: Literature Reference Alignment
 
 **What's Realistic:**
-- **8 biologically validated pathways**:
+- **8 literature-referenced pathways**:
   1. Thalamocortical (sensory relay)
   2. Corticothalamic (feedback modulation)
   3. Corticostriatal (action selection)
@@ -229,9 +229,9 @@ impl SubstantiaNigra {
 
 ---
 
-### 7. GPU Acceleration: 9/10 [OK] IMPLEMENTED
+### 7. GPU Acceleration: Implemented Architecture
 
-**Status**: Fully implemented with wgpu compute shaders (WGSL)
+**Status**: Implemented with wgpu compute shaders (WGSL)
 
 **What's Realistic:**
 - **Cable equation on GPU**: 152 compartments × 10,000 neurons = 1.52M compartments
@@ -239,13 +239,13 @@ impl SubstantiaNigra {
 - **Forward Euler integration**: dt = 0.025-0.05 ms
 - **Adaptive feedback loop**: Hybrid CPU-GPU architecture
 
-**Performance Benchmarks** (NVIDIA RTX 3050, 4GB VRAM):
+**Performance Profile (Exploratory single-run observation on NVIDIA RTX 3050, 4GB VRAM; benchmark suite pending):**
 
-| Scale | Neurons | Compartments | FPS | Real-Time Factor |
-|-------|---------|--------------|-----|------------------|
-| 0.1   | 10,000  | 1,520,000    | 50-80 | 1.25x - 2.0x    |
-| 0.15  | 15,000  | 2,280,000    | 30-50 | 0.75x - 1.25x   |
-| 0.2   | 20,000  | 3,040,000    | 15-25 | 0.375x - 0.625x |
+| Scale | Neurons | Compartments | FPS (Observed) | Real-Time Factor |
+|-------|---------|--------------|----------------|------------------|
+| 0.1   | 10,000  | 1,520,000    | ~50-80         | 1.25x - 2.0x    |
+| 0.15  | 15,000  | 2,280,000    | ~30-50         | 0.75x - 1.25x   |
+| 0.2   | 20,000  | 3,040,000    | ~15-25         | 0.375x - 0.625x |
 
 **What's Simplified:**
 - No multi-GPU support (single GPU only)
@@ -317,45 +317,43 @@ impl SubstantiaNigra {
 - [ ] Axonal delays (distance-dependent)
 - [ ] Structural plasticity (synaptogenesis)
 - [ ] Multi-GPU support
-- [ ] Validation against experimental data (EEG, fMRI)
+- [ ] Experimental comparison suite against electrophysiology (in vitro / in vivo)
+- [ ] Systematic benchmark test suite
 
 ---
 
-## Validation Strategy
+## Model Verification Strategy
 
-### Current Validation
+### Current Internal Verification
+1. **Unit tests**: Test coverage across regional mathematical equations
+2. **Exploratory performance runs**: Baseline GPU execution on RTX 3050 (systematic benchmark suite pending)
+3. **Regime classification**: Attractor analysis algorithms implemented
 
-1. **Unit tests**: All modules have comprehensive test coverage
-2. **Benchmarks**: Performance validated on RTX 3050
-3. **Regime classification**: Attractor analysis matches theoretical predictions
-
-### Planned Validation
-
-1. **EEG/MEG comparison**: Match power spectra and phase relationships
-2. **fMRI BOLD signals**: Hemodynamic response validation
-3. **Single-cell recordings**: Membrane potential traces
-4. **Behavioral tasks**: Working memory, decision-making
+### Planned Experimental Comparisons (Future Work - Unverified)
+1. **Electrophysiological comparison**: Empirical spike timing and voltage waveforms vs standard recordings
+2. **Hemodynamic response proxies**: BOLD hemodynamic coupling comparison
+3. **Behavioral task benchmarks**: Working memory and action selection dynamics
 
 ---
 
 ## Conclusion
 
-HumanBrain achieves **8.5/10 biological realism** through:
+HumanBrain provides an open modular architecture for computational neuroscience modeling:
 
-**Strengths:**
-- Complete GPU-accelerated multi-compartmental neurons (152 comp/neuron)
-- Anatomically validated inter-regional connectivity (8 pathways)
-- Fully implemented hippocampus, basal ganglia, thalamus
-- Adaptive feedback loop with attractor analysis
-- Near real-time performance (10K neurons @ 50-80 FPS on RTX 3050)
+**Implemented Subsystems:**
+- GPU-accelerated multi-compartmental neurons (152 comp/neuron)
+- Literature-referenced inter-regional connectivity (8 pathways)
+- Regional module prototypes for hippocampus, basal ganglia, and thalamus
+- Adaptive feedback loop exploring attractor dynamics
+- Exploratory execution on consumer GPU (10K neurons, ~50-80 FPS observed; benchmark suite pending)
 
-**Areas for Improvement:**
-- Glia and neurovascular coupling
-- Individual synapse models with STDP
-- White matter structure with axonal delays
-- Validation against experimental recordings
+**Ongoing Development Areas:**
+- Biophysical glia and neurovascular coupling detail
+- Individual synapse plasticity (STDP)
+- White matter distance-dependent axonal delays
+- Systematic comparison against experimental electrophysiological recordings
 
-**Philosophy**: *"No quiero suficiencia, quiero realidad"* - This project prioritizes biological accuracy without sacrificing computational performance.
+**Philosophy**: *"No quiero suficiencia, quiero realidad"* - Prioritizing rigorous biophysical modeling without unverified scientific claims.
 
 ---
 

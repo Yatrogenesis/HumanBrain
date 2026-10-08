@@ -4,14 +4,14 @@ This document describes the architectural decisions and design philosophy behind
 
 ## Design Philosophy
 
-**"Maximize biological realism within computational constraints"**
+**"Prioritize numerical convergence and biophysical consistency within computational constraints"**
 
 We prioritize:
-1. **Biological accuracy** over computational speed (but optimize when possible)
+1. **Biophysical consistency and numerical convergence** over unverified complexity
 2. **Modularity** - each brain region is an independent crate
 3. **Scalability** - support for statistical representations at scale
 4. **Testability** - comprehensive unit tests for all components
-5. **Documentation** - inline docs explaining biological basis
+5. **Documentation** - inline docs explaining biological references
 
 ## Core Design Principles
 
@@ -105,11 +105,12 @@ Neurons are energy-limited:
 
 ### Glial Cells
 
-**Why include glia?**
-Glia outnumber neurons 1:1 and perform critical functions:
-- Astrocytes: Glutamate clearance, K⁺ buffering
-- Oligodendrocytes: Myelination (50-100x conduction speed)
-- Microglia: Synaptic pruning, immune response
+**Anatomical Reference vs. Implemented Scope:**
+- **Anatomical Reference**: In the human brain overall, the glia-to-neuron ratio is approximately 1:1 (Azevedo et al., 2009; neocortex is ~1.5:1, cerebellum ~0.2:1). Glia perform critical homeostatic and structural functions:
+  - Astrocytes: Glutamate clearance, K⁺ buffering
+  - Oligodendrocytes: Myelination (increased conduction velocity)
+  - Microglia: Synaptic pruning, immune response
+- **Implemented Scope**: The `glia` crate provides modular baseline models for astrocyte clearance, K⁺ buffering, and myelination conduction factors.
 
 **Implementation:**
 - Astrocytes clear glutamate (prevent excitotoxicity)
@@ -135,11 +136,14 @@ Layer 6:   Corticothalamic → feedback to thalamus
 - L5 → L6 (deep layers)
 - L6 → L4 (feedback)
 
-**Statistical scaling:**
-- Full neocortex: 16 billion neurons
-- 1 column template: 100,000 neurons (fully simulated)
-- 160,000 columns total
-- Representative sampling + statistical extrapolation
+**Anatomical Reference vs. Implemented Capacity:**
+- **Anatomical Reference (Human Neocortex)**:
+  - Total neocortical neurons: ~16 billion (Azevedo et al., 2009)
+  - Cortical column anatomical estimate: ~100,000 neurons per macrocolumn (Mountcastle, 1997)
+  - Estimated macrocolumns: ~160,000 across neocortex
+- **Implemented Capacity (Current Codebase)**:
+  - Current network examples and tests instantiate prototype networks (e.g., 100 to 10,000 compartmental neurons).
+  - The 100,000-neuron column and 16-billion whole cortex are theoretical anatomical references and future scaling targets, NOT currently verified runtime simulation capacity. Representative sampling and statistical extrapolation are architectural targets for large-scale extensions.
 
 ## Data Structures
 

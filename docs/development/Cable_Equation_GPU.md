@@ -2,9 +2,9 @@
 
 ## Logro Crítico: PARIDAD FÍSICA GPU-CPU ✅
 
-Este módulo resuelve la **divergencia crítica** identificada en la evaluación técnica:
-- ❌ **Antes**: GPU implementaba "point neuron" (4/10 realismo biológico)
-- ✅ **Ahora**: GPU implementa cable equation con topología arbórea completa (9.8/10 realismo)
+Este módulo aborda la formulación del modelo neuronal en GPU:
+- Previo: GPU implementaba modelo simplificado de un compartimento ("point neuron")
+- Actual: GPU implementa formulación cable equation con topología arbórea multi-compartimental (152 compartimentos)
 
 ---
 

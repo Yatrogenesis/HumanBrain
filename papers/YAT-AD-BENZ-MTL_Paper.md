@@ -1,4 +1,9 @@
-# YAT-AD-BENZ-MTL: A Multi-Target Disease-Modifying Agent for Alzheimer's Disease
+# YAT-AD-BENZ-MTL: A Multi-Target Computational Candidate Concept for Alzheimer's Disease Modeling
+
+> **RESEARCH NOTICE / NO CLINICAL VALIDATION**:
+> This document describes an exploratory in silico drug design candidate (YAT-AD-BENZ-MTL) modeled purely via computational simulations in HumanBrain.
+> It has **NOT** undergone biological synthesis, in vitro assays, in vivo trials, or clinical validation.
+> All reported percentages, scores (e.g., ADAS-Cog changes, disease modification estimates), and dosing parameters are theoretical simulation outputs and must NOT be interpreted as medical, clinical, or pharmacological facts.
 
 **Authors:** Yatrogenesis Research Group
 **Affiliation:** Yatrogenesis Neurotherapeutics Division
@@ -8,13 +13,13 @@
 
 ## Abstract
 
-**Background:** Alzheimer's disease (AD) lacks effective disease-modifying therapies. Current drugs (donepezil, memantine) provide only modest symptomatic relief. Multi-target approaches addressing the complex AD pathology are urgently needed.
+**Background:** Alzheimer's disease (AD) research seeks multi-target therapeutic approaches addressing multiple facets of AD pathology (cholinergic deficit, amyloid-β accumulation, tau hyperphosphorylation, and neuroinflammation).
 
-**Methods:** Using DDDE (Deterministic Drug Discovery Engine), we designed YAT-AD-BENZ-MTL, a novel benzylpiperidine-based multi-target compound addressing four pathological pathways: cholinergic deficit, amyloid-β accumulation, tau hyperphosphorylation, and neuroinflammation. The compound was validated in HumanBrain neural simulator across adult, elderly, and renal impairment populations.
+**Methods:** Using DDDE (Deterministic Drug Discovery Engine), we computationally designed YAT-AD-BENZ-MTL, a candidate benzylpiperidine-based multi-target compound concept. The compound profile was evaluated in HumanBrain neural simulation models across simulated adult, elderly, and renal impairment parameters.
 
-**Results:** YAT-AD-BENZ-MTL demonstrated: (1) 92% AChE inhibition with 1000x selectivity over BuChE, (2) 55% Aβ aggregation inhibition, (3) 45% tau aggregation inhibition, (4) 72% cognition improvement (ADAS-Cog), (5) 53% disease modification potential. Population simulations confirmed consistent efficacy with predictable PK adjustments.
+**Results:** In exploratory in silico simulations, YAT-AD-BENZ-MTL exhibited: (1) 92% modeled AChE inhibition with 1000x selectivity over BuChE, (2) 55% simulated Aβ aggregation inhibition proxy, (3) 45% simulated tau aggregation inhibition proxy, (4) 72% modeled cognitive proxy score improvement, and (5) 53% simulated disease trajectory attenuation parameter. Population model runs indicated theoretical PK parameter scaling.
 
-**Conclusions:** YAT-AD-BENZ-MTL represents the first designed multi-target disease-modifying agent for Alzheimer's disease, addressing all major pathological pathways simultaneously.
+**Conclusions:** YAT-AD-BENZ-MTL represents an exploratory computational design concept for multi-target Alzheimer's disease modeling, providing hypotheses for future in vitro synthesis and biological evaluation.
 
 ---
 
@@ -146,26 +151,28 @@ Populations simulated:
 | Mitochondrial protection | 40% | Novel |
 | NMDA modulation | 25% | Memantine: 50% |
 
-### 3.6 Efficacy Results
+### 3.6 In Silico Model Proxy Outcomes (Unverified Simulation)
 
-| Parameter | YAT-AD-BENZ-MTL | Donepezil | Memantine |
-|-----------|-----------------|-----------|-----------|
-| Cognition (ADAS-Cog) | **72%** | 35% | 25% |
-| Memory improvement | **75%** | 38% | 22% |
-| Attention improvement | **68%** | 32% | 20% |
-| ADL improvement | **61%** | 28% | 18% |
-| Disease modification | **53%** | 0% | 0% |
+| Parameter | YAT-AD-BENZ-MTL (Model) | Donepezil (Ref. Literature) | Memantine (Ref. Literature) |
+|-----------|-------------------------|-----------------------------|-----------------------------|
+| Cognition proxy (ADAS-Cog) | **72%** | 35% | 25% |
+| Memory proxy improvement | **75%** | 38% | 22% |
+| Attention proxy improvement | **68%** | 32% | 20% |
+| ADL proxy improvement | **61%** | 28% | 18% |
+| Simulated disease modification | **53%** | 0% | 0% |
 
-### 3.7 Safety Profile
+*Note: Values for YAT-AD-BENZ-MTL represent outputs of mathematical simulations in HumanBrain and have not been measured clinically or in animal models.*
 
-| Parameter | YAT-AD-BENZ-MTL | Donepezil | Rivastigmine |
-|-----------|-----------------|-----------|--------------|
+### 3.7 In Silico Safety Profile Proxy
+
+| Parameter | YAT-AD-BENZ-MTL (Predicted) | Donepezil (Ref. Lit) | Rivastigmine (Ref. Lit) |
+|-----------|-----------------------------|----------------------|-------------------------|
 | GI effects | 27.6% | 35% | 45% |
-| Hepatotoxicity | 5% | 3% | 5% |
+| Hepatotoxicity risk | 5% | 3% | 5% |
 | Cardiac risk | 5% | 8% | 5% |
 | CNS effects | 15% | 12% | 15% |
 
-### 3.8 Population Pharmacokinetics
+### 3.8 Population Pharmacokinetics (Model Parameters)
 
 #### 3.8.1 Adult (55 years, 70 kg)
 
@@ -273,50 +280,48 @@ YAT-AD-BENZ-MTL uniquely addresses all four pathological pathways:
    - BDNF enhancement supports synaptic plasticity
    - Addresses neuroinflammation and oxidative stress
 
-### 4.2 Comparison with Approved and Investigational Drugs
+### 4.2 Theoretical Comparison with Reference Compounds (In Silico vs Literature)
 
-| Feature | YAT-AD-BENZ-MTL | Donepezil | Aducanumab |
-|---------|-----------------|-----------|------------|
-| Mechanism | Multi-target | AChE only | Anti-Aβ only |
-| Cognition improvement | 72% | 35% | 22% |
-| Disease modification | YES | NO | Controversial |
-| Route | Oral QD | Oral QD | IV monthly |
-| Cost estimate | Low | Low | Very high |
-| ARIA risk | None | None | 40% |
-| Multi-pathway | YES | NO | NO |
+| Feature | YAT-AD-BENZ-MTL (In Silico Model) | Donepezil (Ref. Literature) | Aducanumab (Ref. Literature) |
+|---------|-----------------------------------|-----------------------------|------------------------------|
+| Modeled Mechanism | Multi-target design | AChE inhibitor | Anti-Aβ monoclonal antibody |
+| Modeled cognition metric | 72% (model proxy) | 35% | 22% |
+| Disease modification | Modeled trajectory attenuation | Symptomatic | Controversial |
+| Proposed route | Oral QD (theoretical) | Oral QD | IV monthly |
+| Modeled multi-pathway target | Multi-target | Single target | Single target |
 
-### 4.3 Clinical Development Strategy
+### 4.3 Theoretical Preclinical Development Roadmap (Hypothesis)
 
-**Phase 1:** Safety and PK in healthy elderly volunteers
-**Phase 2a:** Proof of concept in mild-moderate AD (ADAS-Cog, biomarkers)
-**Phase 2b:** Dose-ranging with CSF Aβ/tau biomarkers
-**Phase 3:** Pivotal trials with cognition + function + biomarker endpoints
+**Phase 1 Concept:** Chemical synthesis feasibility and in vitro enzyme inhibition assays (AChE, BuChE, BACE1).
+**Phase 2 Concept:** In vitro cell models for Aβ and tau aggregation kinetics.
+**Phase 3 Concept:** In vivo pharmacokinetic and animal model behavioral assessments.
 
 ---
 
 ## 5. Conclusions
 
-YAT-AD-BENZ-MTL represents a paradigm shift in AD treatment:
+YAT-AD-BENZ-MTL represents an exploratory computational drug design concept:
 
-1. **First designed multi-target disease-modifying drug** (AChE + Aβ + Tau + Neuroprotection)
-2. **72% cognition improvement** vs 35% for donepezil
-3. **53% disease modification potential** via amyloid and tau pathways
-4. **Validated across populations** (adult, elderly, renal impairment)
-5. **Oral once-daily dosing** with 85% bioavailability
-6. **Superior to both symptomatic drugs and anti-amyloid antibodies**
+1. **Multi-target design hypothesis** targeting AChE, Aβ proxy, Tau proxy, and oxidative pathways in silico.
+2. **72% modeled cognitive proxy score** in simulated HumanBrain baseline scenarios.
+3. **Simulated disease attenuation potential** in theoretical 3-year progression models.
+4. **Exploratory parameter scaling** evaluated computationally for adult, elderly, and renal impairment models.
+5. **Notice:** Hypotheses generated by this computational model require experimental synthesis, in vitro testing, and clinical trial evaluation before any biological conclusions can be drawn.
 
 ---
 
-## 6. Dosing Recommendations
+## 6. Hypothetical In Silico Dosing Parameters (Not For Clinical Use)
 
-| Population | Dose | Frequency | Notes |
-|------------|------|-----------|-------|
-| Adults (18-65y) | 10 mg | Once daily | Evening with food |
-| Mild-Moderate AD | 10 mg | Once daily | Titrate from 5 mg |
-| Elderly (>65y) | 7.5 mg | Once daily | Monitor cognition |
-| Renal impairment (GFR 30-60) | 7.5 mg | Once daily | - |
-| Severe renal (GFR <30) | 5 mg | Once daily | Avoid in dialysis |
-| Hepatic impairment | 5 mg | Once daily | Mild-moderate only |
+*Warning: The parameters below are computational model inputs for pharmacokinetic simulations only, NOT medical recommendations.*
+
+| Population Model | Simulated Dose Parameter | Frequency | Model Notes |
+|------------------|--------------------------|-----------|-------------|
+| Adults (18-65y) | 10 mg | Once daily | Base model input |
+| Mild-Moderate AD model | 10 mg | Once daily | Model titration from 5 mg |
+| Elderly model (>65y) | 7.5 mg | Once daily | Adjusted for reduced model clearance |
+| Renal impairment model (GFR 30-60) | 7.5 mg | Once daily | Scaled parameter |
+| Severe renal model (GFR <30) | 5 mg | Once daily | Scaled parameter |
+| Hepatic impairment model | 5 mg | Once daily | Scaled parameter |
 
 ---
 

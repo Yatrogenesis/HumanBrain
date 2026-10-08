@@ -4,14 +4,14 @@ Complete documentation paper omitted for brevity - see main implementation in Hu
 
 ## Summary
 
-HumanBrain integrates GPU-accelerated multi-compartmental neurons, complete anatomical connectivity, and adaptive feedback control.
+HumanBrain explores GPU-accelerated multi-compartmental neurons, literature-referenced anatomical connectivity, and adaptive feedback control.
 
-Key innovations:
-- wgpu compute shaders for cable equation (152 comp/neuron)
-- 8 biologically validated inter-regional pathways  
+Key architectural features:
+- wgpu compute shaders for cable equation dynamics (152 comp/neuron)
+- 8 literature-referenced inter-regional pathways
 - Hybrid CPU-GPU attractor analysis feedback loop
-- Metabolic and glial constraints
+- Metabolic and glial constraint models
 
-Performance: 10K neurons @ 50-80 FPS on RTX 3050
+Performance target: 10K neurons (~50-80 FPS exploratory run on RTX 3050; benchmark suite pending)
 
 See repository for full technical details.

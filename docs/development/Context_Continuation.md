@@ -10,10 +10,10 @@
 ### Usuario Espera
 - **NO celebraciones prematuras**: "no me vengas conque ya está, aún te falta mucho"
 - **Realidad, NO suficiencia**: "no quiero suficiencia, quiero realidad"
-- **Calidad world-class**: "impresioname como jamás nada ni nadie lo haya hecho"
+- **Rigor técnico**: modelado consistente con principios biofísicos
 
 ### Nivel de Exigencia
-El usuario espera código de **CLASE MUNDIAL**, único, sin simplificaciones. Todo debe tener rigor científico y elegancia técnica.
+El usuario espera código con **rigor científico y elegancia técnica**, sin simplificaciones apresuradas.
 
 ---
 
@@ -21,7 +21,7 @@ El usuario espera código de **CLASE MUNDIAL**, único, sin simplificaciones. To
 
 ### ✅ COMPLETADO
 1. GPU cable equation con topología arbórea real (8 hijos) - `crates/gpu/src/shaders/cable_equation.wgsl`
-2. Visualizador GPU world-class - `crates/visualization/src/lib.rs`
+2. Visualizador GPU - `crates/visualization/src/lib.rs`
 3. Módulo `whole-brain` creado - `crates/whole-brain/src/lib.rs`
 
 ### 🔄 EN PROGRESO
@@ -141,7 +141,7 @@ HumanBrain/
 │   │   └── Cargo.toml
 │   ├── visualization/
 │   │   ├── src/
-│   │   │   ├── lib.rs                   ✅ COMPLETO (785 líneas, world-class GPU viz)
+│   │   │   ├── lib.rs                   ✅ COMPLETO (785 líneas, GPU viz)
 │   │   │   └── shaders/
 │   │   │       └── neural_viz.wgsl      ✅ COMPLETO (189 líneas, physical color mapping)
 │   │   └── Cargo.toml

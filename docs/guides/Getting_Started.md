@@ -312,9 +312,9 @@ let results: Vec<_> = (0..100).into_par_iter()
 ## Next Steps
 
 1. **Read the [README](README.md)** for architectural overview
-2. **Explore [ARCHITECTURE.md](docs/ARCHITECTURE.md)** for design details
-3. **Check [BIOLOGICAL_ACCURACY.md](docs/BIOLOGICAL_ACCURACY.md)** for validation
-4. **Review [BENCHMARKS.md](docs/BENCHMARKS.md)** for performance data
+2. **Explore [Architecture.md](docs/Architecture.md)** for design details
+3. **Check [Biological_Accuracy.md](docs/Biological_Accuracy.md)** for model scope and literature comparisons
+4. **Review [Benchmarks.md](docs/Benchmarks.md)** for performance data
 5. **Look at [examples/](examples/)** for complete programs
 6. **Run tests** to see the simulator in action
 
@@ -331,7 +331,7 @@ Contributions welcome! Areas needing help:
 - Thalamus implementation
 - GPU acceleration
 - Visualization tools
-- Validation against experimental data
+- Comparison against experimental datasets
 
 See [README.md](README.md) for contribution guidelines.
 
