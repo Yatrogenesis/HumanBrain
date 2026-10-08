@@ -9,11 +9,17 @@
 //! - Pharmacokinetics: FDA labels, clinical pharmacology reviews
 //! - Brain concentrations: Microdialysis and CSF studies
 //!
-//! # References (PMID)
-//! - Lingford-Hughes A et al. (2002) Neuropsychopharmacology 27:867-876
-//! - Farde L et al. (1992) Arch Gen Psychiatry 49:538-544
-//! - Meyer JH et al. (2004) Am J Psychiatry 161:826-835
-//! - Melichar JK et al. (2005) Neuropsychopharmacology 30:516-524
+//! # Provenance warning (corrected 2026-10-08)
+//! The PubMed IDs previously attached to the data points below were wrong (they pointed to unrelated
+//! articles, and one did not exist) and have been removed (`pmid: None`). The numeric values (dose,
+//! time, occupancy, SD) have NOT been verified against any primary source: treat them as illustrative.
+//! Set `pmid: Some(id)` ONLY after extracting the value from that study.
+//!
+//! # Background reading (identity verified in PubMed 2026-10-08; values here are not taken from them)
+//! - Lingford-Hughes A et al. (2002) J Cereb Blood Flow Metab, PMID 12142573 ([11C]Ro15 4513 PET, alpha5 GABA-A)
+//! - Farde L et al. (1992) Arch Gen Psychiatry, PMID 1352677 (D1/D2 occupancy by neuroleptics and clozapine)
+//! - Meyer JH et al. (2004) Am J Psychiatry, PMID 15121647 (SERT occupancy of five SSRIs)
+//! - Melichar JK et al. (2005) J Pharmacol Exp Ther, PMID 15347732 ([11C]diprenorphine, methadone occupancy)
 
 use std::collections::HashMap;
 use serde::{Deserialize, Serialize};
@@ -121,7 +127,7 @@ impl ClinicalLiteratureDb {
         // ============================================================
         // BENZODIAZEPINES - [11C]Flumazenil PET
         // ============================================================
-        // Lingford-Hughes A et al. (2002) PMID: 12499952
+        // Lingford-Hughes A et al. (2002) (PMID removed 2026-10-08: it pointed to an unrelated article; source of these values is unverified)
 
         self.add_pet(PetOccupancyData {
             drug: "diazepam".to_string(),
@@ -131,7 +137,7 @@ impl ClinicalLiteratureDb {
             time_h: 1.5,
             occupancy_percent: 15.0, // Low occupancy at therapeutic doses
             sd: Some(5.0),
-            pmid: Some(12499952),
+            pmid: None,
             region: "cortex".to_string(),
         });
 
@@ -143,7 +149,7 @@ impl ClinicalLiteratureDb {
             time_h: 1.5,
             occupancy_percent: 28.0,
             sd: Some(8.0),
-            pmid: Some(12499952),
+            pmid: None,
             region: "cortex".to_string(),
         });
 
@@ -155,7 +161,7 @@ impl ClinicalLiteratureDb {
             time_h: 2.0,
             occupancy_percent: 20.0,
             sd: Some(6.0),
-            pmid: Some(12499952),
+            pmid: None,
             region: "cortex".to_string(),
         });
 
@@ -167,7 +173,7 @@ impl ClinicalLiteratureDb {
             time_h: 0.25,
             occupancy_percent: 35.0,
             sd: Some(10.0),
-            pmid: Some(12499952),
+            pmid: None,
             region: "cortex".to_string(),
         });
 
@@ -179,15 +185,15 @@ impl ClinicalLiteratureDb {
             time_h: 1.5,
             occupancy_percent: 22.0,
             sd: Some(7.0),
-            pmid: Some(12499952),
+            pmid: None,
             region: "cortex".to_string(),
         });
 
         // ============================================================
         // ANTIPSYCHOTICS - [11C]Raclopride PET (D2)
         // ============================================================
-        // Farde L et al. (1992) PMID: 1616206
-        // Kapur S et al. (2000) PMID: 10686270
+        // Farde L et al. (1992) (PMID removed 2026-10-08: it pointed to an unrelated article; source of these values is unverified)
+        // Kapur S et al. (2000) (PMID removed 2026-10-08: it pointed to an unrelated article; source of these values is unverified)
 
         self.add_pet(PetOccupancyData {
             drug: "haloperidol".to_string(),
@@ -197,7 +203,7 @@ impl ClinicalLiteratureDb {
             time_h: 4.0,
             occupancy_percent: 70.0, // Therapeutic range 65-80%
             sd: Some(8.0),
-            pmid: Some(1616206),
+            pmid: None,
             region: "striatum".to_string(),
         });
 
@@ -209,7 +215,7 @@ impl ClinicalLiteratureDb {
             time_h: 4.0,
             occupancy_percent: 80.0,
             sd: Some(5.0),
-            pmid: Some(1616206),
+            pmid: None,
             region: "striatum".to_string(),
         });
 
@@ -221,7 +227,7 @@ impl ClinicalLiteratureDb {
             time_h: 4.0,
             occupancy_percent: 66.0,
             sd: Some(10.0),
-            pmid: Some(10686270),
+            pmid: None,
             region: "striatum".to_string(),
         });
 
@@ -233,7 +239,7 @@ impl ClinicalLiteratureDb {
             time_h: 4.0,
             occupancy_percent: 75.0,
             sd: Some(8.0),
-            pmid: Some(10686270),
+            pmid: None,
             region: "striatum".to_string(),
         });
 
@@ -245,7 +251,7 @@ impl ClinicalLiteratureDb {
             time_h: 4.0,
             occupancy_percent: 60.0,
             sd: Some(12.0),
-            pmid: Some(10686270),
+            pmid: None,
             region: "striatum".to_string(),
         });
 
@@ -257,14 +263,14 @@ impl ClinicalLiteratureDb {
             time_h: 4.0,
             occupancy_percent: 52.0, // Lower D2 occupancy is characteristic
             sd: Some(15.0),
-            pmid: Some(10686270),
+            pmid: None,
             region: "striatum".to_string(),
         });
 
         // ============================================================
         // SSRIs - [11C]DASB PET (SERT)
         // ============================================================
-        // Meyer JH et al. (2004) PMID: 15121618
+        // Meyer JH et al. (2004) (PMID removed 2026-10-08: it pointed to an unrelated article; source of these values is unverified)
 
         self.add_pet(PetOccupancyData {
             drug: "fluoxetine".to_string(),
@@ -274,7 +280,7 @@ impl ClinicalLiteratureDb {
             time_h: 336.0, // Steady state (2 weeks)
             occupancy_percent: 80.0,
             sd: Some(5.0),
-            pmid: Some(15121618),
+            pmid: None,
             region: "striatum".to_string(),
         });
 
@@ -286,7 +292,7 @@ impl ClinicalLiteratureDb {
             time_h: 336.0,
             occupancy_percent: 83.0,
             sd: Some(6.0),
-            pmid: Some(15121618),
+            pmid: None,
             region: "striatum".to_string(),
         });
 
@@ -298,7 +304,7 @@ impl ClinicalLiteratureDb {
             time_h: 336.0,
             occupancy_percent: 77.0,
             sd: Some(8.0),
-            pmid: Some(15121618),
+            pmid: None,
             region: "striatum".to_string(),
         });
 
@@ -310,7 +316,7 @@ impl ClinicalLiteratureDb {
             time_h: 336.0,
             occupancy_percent: 72.0,
             sd: Some(7.0),
-            pmid: Some(15121618),
+            pmid: None,
             region: "striatum".to_string(),
         });
 
@@ -322,7 +328,7 @@ impl ClinicalLiteratureDb {
             time_h: 336.0,
             occupancy_percent: 80.0,
             sd: Some(5.0),
-            pmid: Some(15121618),
+            pmid: None,
             region: "striatum".to_string(),
         });
 
@@ -334,7 +340,7 @@ impl ClinicalLiteratureDb {
             time_h: 336.0,
             occupancy_percent: 45.0, // Lower at low doses
             sd: Some(12.0),
-            pmid: Some(15121618),
+            pmid: None,
             region: "striatum".to_string(),
         });
 
@@ -346,14 +352,14 @@ impl ClinicalLiteratureDb {
             time_h: 336.0,
             occupancy_percent: 70.0,
             sd: Some(10.0),
-            pmid: Some(15121618),
+            pmid: None,
             region: "striatum".to_string(),
         });
 
         // ============================================================
         // OPIOIDS - [11C]Carfentanil PET (mu-opioid)
         // ============================================================
-        // Melichar JK et al. (2005) PMID: 15483561
+        // Melichar JK et al. (2005) (PMID removed 2026-10-08: it pointed to an unrelated article; source of these values is unverified)
 
         self.add_pet(PetOccupancyData {
             drug: "morphine".to_string(),
@@ -363,7 +369,7 @@ impl ClinicalLiteratureDb {
             time_h: 0.5,
             occupancy_percent: 42.0,
             sd: Some(12.0),
-            pmid: Some(15483561),
+            pmid: None,
             region: "thalamus".to_string(),
         });
 
@@ -375,7 +381,7 @@ impl ClinicalLiteratureDb {
             time_h: 0.25,
             occupancy_percent: 35.0,
             sd: Some(10.0),
-            pmid: Some(15483561),
+            pmid: None,
             region: "thalamus".to_string(),
         });
 
@@ -387,7 +393,7 @@ impl ClinicalLiteratureDb {
             time_h: 2.0,
             occupancy_percent: 75.0, // High occupancy even at low doses
             sd: Some(8.0),
-            pmid: Some(15483561),
+            pmid: None,
             region: "thalamus".to_string(),
         });
 
@@ -404,7 +410,7 @@ impl ClinicalLiteratureDb {
             time_h: 0.05, // 3 min
             occupancy_percent: 50.0, // At LOC
             sd: Some(15.0),
-            pmid: Some(10754634),
+            pmid: None,
             region: "cortex".to_string(),
         });
 
@@ -420,7 +426,7 @@ impl ClinicalLiteratureDb {
             time_h: 0.25,
             occupancy_percent: 30.0, // Subanesthetic
             sd: Some(10.0),
-            pmid: Some(11283682),
+            pmid: None,
             region: "cortex".to_string(),
         });
     }

@@ -1,7 +1,13 @@
-//! PET-Calibrated Validation v2
+//! PET-Calibrated Self-Consistency Check v2
 //!
-//! Validates model predictions against PET imaging data using
-//! plasma EC50 values AND literature Cmax values.
+//! IMPORTANT (corrected 2026-10-08): this example is NOT an independent validation. The EC50 values
+//! are derived algebraically from the same occupancy figures that are then compared against, so the
+//! comparison is circular by construction (FITTED: EC50 = Cmax / (occ / (1 - occ))). The occupancy and
+//! Cmax figures below were NOT extracted from the papers they were previously attributed to (the PMIDs
+//! formerly attached to them pointed to unrelated articles and have been removed): treat all numbers
+//! as illustrative until each one is sourced from a verified primary study.
+//! Studies named in the output are background reading only (identity verified in PubMed; their values
+//! are not what is encoded here).
 //!
 //! Key insight: Use CLINICAL Cmax values, not calculated from PK
 //!
@@ -23,7 +29,8 @@ struct DrugPetData {
     hill_n: f64,
     /// Literature occupancy (%)
     lit_occupancy: f64,
-    pmid: u32,
+    /// Verified PubMed ID of the source study, or None when the provenance of the numbers is NOT verified.
+    pmid: Option<u32>,
 }
 
 /// Validation result
@@ -39,7 +46,7 @@ struct ValidationResult {
 
 fn main() {
     println!("╔══════════════════════════════════════════════════════════════════╗");
-    println!("║       HumanBrain - PET-Calibrated Validation v2                  ║");
+    println!("║       HumanBrain - PET Self-Consistency Check v2                   ║");
     println!("║       Using Clinical Cmax + PET EC50 from Literature             ║");
     println!("║       Target Error: < 5%                                         ║");
     println!("╚══════════════════════════════════════════════════════════════════╝\n");
@@ -55,7 +62,7 @@ fn main() {
     // ================================================================
     println!("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
     println!("  BENZODIAZEPINES (GABA-A via [11C]Flumazenil PET)");
-    println!("  Lingford-Hughes A et al. (2002) PMID: 12499952");
+    println!("  Lingford-Hughes A et al. (2002), PubMed 12142573 (background reading only; values below NOT taken from it)");
     println!("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n");
 
     for d in pet_data.iter().filter(|d| d.receptor == "GABA-A" && d.drug != "propofol") {
@@ -69,7 +76,7 @@ fn main() {
     // ================================================================
     println!("\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
     println!("  ANTIPSYCHOTICS (D2 via [11C]Raclopride PET)");
-    println!("  Farde L et al. (1992) PMID: 1616206");
+    println!("  Farde L et al. (1992), PubMed 1352677 (background reading only; values below NOT taken from it)");
     println!("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n");
 
     for d in pet_data.iter().filter(|d| d.receptor == "D2") {
@@ -83,7 +90,7 @@ fn main() {
     // ================================================================
     println!("\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
     println!("  SSRIs (SERT via [11C]DASB PET) - Steady State");
-    println!("  Meyer JH et al. (2004) PMID: 15121618");
+    println!("  Meyer JH et al. (2004), PubMed 15121647 (background reading only; values below NOT taken from it)");
     println!("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n");
 
     for d in pet_data.iter().filter(|d| d.receptor == "SERT") {
@@ -97,7 +104,7 @@ fn main() {
     // ================================================================
     println!("\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
     println!("  OPIOIDS (μ-OR via [11C]Carfentanil PET)");
-    println!("  Melichar JK et al. (2005) PMID: 15483561");
+    println!("  Melichar JK et al. (2005), PubMed 15347732 (background reading only; values below NOT taken from it)");
     println!("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n");
 
     for d in pet_data.iter().filter(|d| d.receptor == "OPRM1") {
@@ -182,7 +189,7 @@ fn build_pet_validation_data() -> Vec<DrugPetData> {
             ec50_plasma_ng_ml: 1700.0,     // Calibrated: 300/(0.15/0.85) = 1700
             hill_n: 1.0,
             lit_occupancy: 15.0,
-            pmid: 12499952,
+            pmid: None,
         },
         DrugPetData {
             drug: "alprazolam",
@@ -193,7 +200,7 @@ fn build_pet_validation_data() -> Vec<DrugPetData> {
             ec50_plasma_ng_ml: 35.5,       // Calibrated: 10/(0.22/0.78) = 35.5
             hill_n: 1.0,
             lit_occupancy: 22.0,
-            pmid: 12499952,
+            pmid: None,
         },
         DrugPetData {
             drug: "midazolam",
@@ -204,7 +211,7 @@ fn build_pet_validation_data() -> Vec<DrugPetData> {
             ec50_plasma_ng_ml: 185.7,      // Calibrated: 100/(0.35/0.65) = 185.7
             hill_n: 1.0,
             lit_occupancy: 35.0,
-            pmid: 12499952,
+            pmid: None,
         },
         DrugPetData {
             drug: "lorazepam",
@@ -215,7 +222,7 @@ fn build_pet_validation_data() -> Vec<DrugPetData> {
             ec50_plasma_ng_ml: 100.0,      // Calibrated: 25/(0.20/0.80) = 100
             hill_n: 1.0,
             lit_occupancy: 20.0,
-            pmid: 12499952,
+            pmid: None,
         },
 
         // ============================================================
@@ -234,7 +241,7 @@ fn build_pet_validation_data() -> Vec<DrugPetData> {
             ec50_plasma_ng_ml: 1.5,        // Calibrated: 3.5/(0.70/0.30) = 1.5
             hill_n: 1.0,
             lit_occupancy: 70.0,
-            pmid: 1616206,
+            pmid: None,
         },
         DrugPetData {
             drug: "haloperidol 10mg",
@@ -245,7 +252,7 @@ fn build_pet_validation_data() -> Vec<DrugPetData> {
             ec50_plasma_ng_ml: 1.75,       // Calibrated: 7.0/(0.80/0.20) = 1.75
             hill_n: 1.0,
             lit_occupancy: 80.0,
-            pmid: 1616206,
+            pmid: None,
         },
         DrugPetData {
             drug: "risperidone 2mg",
@@ -256,7 +263,7 @@ fn build_pet_validation_data() -> Vec<DrugPetData> {
             ec50_plasma_ng_ml: 10.3,       // Calibrated
             hill_n: 1.0,
             lit_occupancy: 66.0,
-            pmid: 10686270,
+            pmid: None,
         },
 
         // ============================================================
@@ -275,7 +282,7 @@ fn build_pet_validation_data() -> Vec<DrugPetData> {
             ec50_plasma_ng_ml: 10.0,       // Calibrated: 40/(0.80/0.20) = 10
             hill_n: 1.0,
             lit_occupancy: 80.0,
-            pmid: 15121618,
+            pmid: None,
         },
         DrugPetData {
             drug: "sertraline SS",
@@ -286,7 +293,7 @@ fn build_pet_validation_data() -> Vec<DrugPetData> {
             ec50_plasma_ng_ml: 11.9,       // Calibrated: 40/(0.77/0.23) = 11.9
             hill_n: 1.0,
             lit_occupancy: 77.0,
-            pmid: 15121618,
+            pmid: None,
         },
         DrugPetData {
             drug: "paroxetine SS",
@@ -297,7 +304,7 @@ fn build_pet_validation_data() -> Vec<DrugPetData> {
             ec50_plasma_ng_ml: 8.2,        // Calibrated: 40/(0.83/0.17) = 8.2
             hill_n: 1.0,
             lit_occupancy: 83.0,
-            pmid: 15121618,
+            pmid: None,
         },
         DrugPetData {
             drug: "citalopram SS",
@@ -308,7 +315,7 @@ fn build_pet_validation_data() -> Vec<DrugPetData> {
             ec50_plasma_ng_ml: 17.5,       // Calibrated: 45/(0.72/0.28) = 17.5
             hill_n: 1.0,
             lit_occupancy: 72.0,
-            pmid: 15121618,
+            pmid: None,
         },
 
         // ============================================================
@@ -327,7 +334,7 @@ fn build_pet_validation_data() -> Vec<DrugPetData> {
             ec50_plasma_ng_ml: 76.0,       // Calibrated: 55/(0.42/0.58) = 76
             hill_n: 1.0,
             lit_occupancy: 42.0,
-            pmid: 15483561,
+            pmid: None,
         },
         DrugPetData {
             drug: "fentanyl IV",
@@ -338,7 +345,7 @@ fn build_pet_validation_data() -> Vec<DrugPetData> {
             ec50_plasma_ng_ml: 0.93,       // Calibrated: 0.5/(0.35/0.65) = 0.93
             hill_n: 1.0,
             lit_occupancy: 35.0,
-            pmid: 15483561,
+            pmid: None,
         },
         DrugPetData {
             drug: "buprenorphine SL",
@@ -349,7 +356,7 @@ fn build_pet_validation_data() -> Vec<DrugPetData> {
             ec50_plasma_ng_ml: 0.33,       // Calibrated: 1.0/(0.75/0.25) = 0.33
             hill_n: 1.0,
             lit_occupancy: 75.0,
-            pmid: 15483561,
+            pmid: None,
         },
 
         // ============================================================
@@ -364,7 +371,7 @@ fn build_pet_validation_data() -> Vec<DrugPetData> {
             ec50_plasma_ng_ml: 4000.0,     // By definition at 50%
             hill_n: 2.0,                   // Steeper for anesthetics
             lit_occupancy: 50.0,
-            pmid: 10754634,
+            pmid: None,
         },
         DrugPetData {
             drug: "ketamine IV",
@@ -375,7 +382,7 @@ fn build_pet_validation_data() -> Vec<DrugPetData> {
             ec50_plasma_ng_ml: 583.0,      // Calibrated: 250/(0.30/0.70) = 583
             hill_n: 1.0,
             lit_occupancy: 30.0,
-            pmid: 11283682,
+            pmid: None,
         },
     ]
 }
