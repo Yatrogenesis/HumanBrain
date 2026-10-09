@@ -1,4 +1,9 @@
-# YAT-PD-PYR-MAOB: A Triple-Mechanism Anti-Parkinsonian Agent with Neuroprotective Properties
+# YAT-PD-PYR-MAOB: An In Silico Anti-Parkinsonian Design Candidate with Modeled Neuroprotective Profiles
+
+> **RESEARCH NOTICE / NO CLINICAL VALIDATION**:
+> This document describes a theoretical computational molecule design (YAT-PD-PYR-MAOB) analyzed via in silico simulations in HumanBrain.
+> It has **NOT** undergone biological synthesis, in vitro validation, animal trials, or human clinical studies.
+> All stated efficacy metrics (e.g. UPDRS improvements, dyskinesia probabilities, neuroprotection estimates) and dosing parameters are theoretical model outputs and must NOT be considered clinical or diagnostic evidence.
 
 **Authors:** Yatrogenesis Research Group
 **Affiliation:** Yatrogenesis Neurotherapeutics Division
@@ -8,13 +13,13 @@
 
 ## Abstract
 
-**Background:** Current Parkinson's disease (PD) treatments provide symptomatic relief but fail to slow disease progression. L-DOPA causes motor complications after 5-10 years, while dopamine agonists lack neuroprotective effects.
+**Background:** Current Parkinson's disease (PD) therapeutic research explores multi-mechanism molecules combining symptomatic motor relief with neuroprotective hypotheses to mitigate long-term progression.
 
-**Methods:** Using the Deterministic Drug Discovery Engine (DDDE), we designed YAT-PD-PYR-MAOB, a novel pyrazole-based compound combining D2/D3 partial agonism, MAO-B inhibition, and multi-target neuroprotection. The compound was validated in HumanBrain neural simulator across adult, elderly, and renal impairment populations.
+**Methods:** Using the Deterministic Drug Discovery Engine (DDDE), we designed YAT-PD-PYR-MAOB, an exploratory pyrazole-based compound candidate combining modeled D2/D3 partial agonism, MAO-B inhibition, and neuroprotective pathways. The candidate was evaluated computationally in HumanBrain neural simulation models across simulated adult, elderly, and renal impairment profiles.
 
-**Results:** YAT-PD-PYR-MAOB demonstrated: (1) 73.5% motor improvement, (2) 10% dyskinesia risk (vs 80% for L-DOPA), (3) 92% MAO-B inhibition, (4) 75% antioxidant activity, (5) 60% α-synuclein aggregation inhibition. Population simulations confirmed consistent efficacy across age groups with predictable PK adjustments.
+**Results:** In computer simulations, YAT-PD-PYR-MAOB demonstrated: (1) 73.5% modeled motor proxy improvement, (2) 10% simulated dyskinesia proxy risk, (3) 92% modeled MAO-B inhibition, (4) 75% modeled antioxidant score proxy, (5) 60% modeled α-synuclein aggregation inhibition proxy. Simulated population runs indicated theoretical PK scaling parameters.
 
-**Conclusions:** YAT-PD-PYR-MAOB represents the first designed triple-mechanism anti-parkinsonian with disease-modifying potential.
+**Conclusions:** YAT-PD-PYR-MAOB represents an in silico candidate design concept for anti-parkinsonian multi-target research, providing computational hypotheses for future chemical synthesis and biological testing.
 
 ---
 
@@ -102,18 +107,20 @@ Populations simulated:
 | Iron chelation | Moderate | Similar to deferiprone |
 | BDNF induction | 45% increase | Novel |
 
-### 3.4 Efficacy Results
+### 3.4 In Silico Model Efficacy Proxies
 
-| Parameter | YAT-PD-PYR-MAOB | L-DOPA | Pramipexole |
-|-----------|-----------------|--------|-------------|
-| Motor improvement (UPDRS) | 73.5% | 95% | 75% |
-| Tremor reduction | 66.1% | 90% | 70% |
-| Rigidity reduction | 69.8% | 92% | 72% |
-| Bradykinesia improvement | 62.5% | 88% | 68% |
-| Dyskinesia risk | **10%** | 80% | 15% |
-| Hallucination risk | 10% | 15% | 25% |
+| Parameter | YAT-PD-PYR-MAOB (Model) | L-DOPA (Ref. Literature) | Pramipexole (Ref. Literature) |
+|-----------|-------------------------|--------------------------|-------------------------------|
+| Motor improvement proxy (UPDRS) | 73.5% | 95% | 75% |
+| Tremor reduction proxy | 66.1% | 90% | 70% |
+| Rigidity reduction proxy | 69.8% | 92% | 72% |
+| Bradykinesia improvement proxy | 62.5% | 88% | 68% |
+| Modeled dyskinesia risk | **10%** | 80% | 15% |
+| Modeled hallucination risk | 10% | 15% | 25% |
 
-### 3.5 Population Pharmacokinetics
+*Note: Efficacy and risk values for YAT-PD-PYR-MAOB are computational outputs of the HumanBrain basal ganglia model and have not been validated in patient studies.*
+
+### 3.5 Population Pharmacokinetics (Model Parameters)
 
 #### 3.5.1 Adult (50 years, 70 kg)
 
@@ -204,40 +211,41 @@ YAT-PD-PYR-MAOB uniquely combines:
    - Antioxidant activity protects remaining neurons
    - Mitochondrial support addresses PD pathophysiology
 
-### 4.2 Comparison with Approved Drugs
+### 4.2 Theoretical Comparison with Reference Drugs (In Silico vs Literature)
 
-| Feature | YAT-PD-PYR-MAOB | Best Current |
-|---------|-----------------|--------------|
-| Motor efficacy | 73% | L-DOPA 95% |
-| Dyskinesia | 10% | Rasagiline 5% |
-| Neuroprotection | YES | None proven |
-| Once-daily | YES | Some |
-| Cardiac safety | Excellent | Variable |
-| Disease modification | Probable | None |
+| Feature | YAT-PD-PYR-MAOB (Model) | Reference Literature |
+|---------|-------------------------|----------------------|
+| Modeled Motor Efficacy Proxy | 73.5% (model) | L-DOPA ~95% |
+| Modeled Dyskinesia Risk | 10% (model proxy) | Rasagiline ~5% |
+| Neuroprotection Hypothesis | Multi-target in silico design | None proven clinically |
+| Administration Concept | Once-daily theoretical design | Variable |
+| Disease modification | Modeled progression attenuation | None |
 
 ---
 
 ## 5. Conclusions
 
-YAT-PD-PYR-MAOB represents a paradigm shift in PD treatment:
+YAT-PD-PYR-MAOB represents an exploratory computational drug candidate design:
 
-1. **First triple-mechanism designed drug** (D2/D3 + MAO-B + neuroprotection)
-2. **73% motor improvement with only 10% dyskinesia risk**
-3. **Disease-modifying potential** via α-synuclein inhibition
-4. **Validated across populations** (adult, elderly, renal impairment)
-5. **Once-daily oral dosing** with 85% bioavailability
+1. **Triple-mechanism design hypothesis** combining modeled D2/D3 partial agonism, MAO-B inhibition, and neuroprotective pathways.
+2. **73.5% motor proxy improvement** in simulated basal ganglia models with reduced dyskinesia proxy risk.
+3. **Exploratory disease-modifying hypotheses** evaluated via simulated α-synuclein inhibition metrics.
+4. **Parameter scaling** evaluated across computational population models.
+5. **Notice:** These results are computational simulation outputs and have not been confirmed by chemical synthesis or clinical studies.
 
 ---
 
-## 6. Dosing Recommendations
+## 6. Hypothetical In Silico Dosing Parameters (Not For Clinical Use)
 
-| Population | Dose | Frequency | Notes |
-|------------|------|-----------|-------|
-| Adults (18-65y) | 10 mg | Once daily | Morning |
-| Elderly (>65y) | 7.5 mg | Once daily | Monitor |
-| Renal impairment (GFR 30-60) | 7.5 mg | Once daily | - |
-| Severe renal (GFR <30) | 5 mg | Once daily | Dialysis: no supplement |
-| Hepatic impairment | 5 mg | Once daily | Avoid in severe |
+*Warning: The parameters below are computational model inputs for pharmacokinetic simulations only, NOT clinical advice.*
+
+| Population Model | Simulated Dose Parameter | Frequency | Model Notes |
+|------------------|--------------------------|-----------|-------------|
+| Adults model (18-65y) | 10 mg | Once daily | Base kinetic parameter |
+| Elderly model (>65y) | 7.5 mg | Once daily | Scaled for model clearance |
+| Renal impairment model (GFR 30-60) | 7.5 mg | Once daily | Scaled parameter |
+| Severe renal model (GFR <30) | 5 mg | Once daily | Model without supplemental dialysis clearance |
+| Hepatic impairment model | 5 mg | Once daily | Parameter scaled for hepatic clearance |
 
 ---
 

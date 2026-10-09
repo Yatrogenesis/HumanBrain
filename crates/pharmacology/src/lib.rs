@@ -1,4 +1,4 @@
-﻿//! Mechanistic Pharmacology Crate
+//! Mechanistic Pharmacology Crate
 //! ================================
 //!
 //! First-principles biophysical models for drug-receptor interactions.
@@ -55,7 +55,7 @@ pub mod stochastic_resonance;
 pub mod reactive_metabolites;
 pub mod adverse_events;
 
-// Validation against clinical literature
+// Reference comparisons from clinical literature (illustrative; no clinical validation)
 pub mod clinical_literature;
 
 // Re-exports for convenience

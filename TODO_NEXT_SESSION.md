@@ -53,7 +53,7 @@
 
 ## SESIÓN ANTERIOR (2025-12-02)
 
-1. [x] PET validation calibrada: 16/16 PASS, 0% error
+1. [x] PET self-consistency check calibrado (FITTED: ajuste algebraico circular interno, no validación empírica independiente)
 2. [x] validate_pet_calibrated.rs creado y pusheado
 3. [x] 267 repos mapeados en ecosistema Yatrogenesis
 4. [x] Phi-2-STEM-QLoRA encontrado en Simulato-R_v2.0/models/
@@ -99,7 +99,7 @@
 
 ```
 C:/Users/pakom/
-├── HumanBrain/              # Main brain simulator (PET validated)
+├── HumanBrain/              # Main brain simulator (PET self-consistency check)
 ├── HumanBrain-TestingLabs/  # Validation framework
 ├── Simulato-R_v2.0/         # Main simulator + NEW adapters
 │   └── crates/database/src/

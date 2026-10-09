@@ -1,8 +1,8 @@
 # Neural Dynamics Visualizer - HumanBrain Project
 
-## World-Class GPU-Accelerated 3D Visualization
+## GPU-Accelerated 3D Visualization
 
-Real-time rendering of multi-compartmental neural dynamics with physical accuracy and aesthetic excellence.
+Rendering of multi-compartmental neural dynamics using wgpu.
 
 ---
 

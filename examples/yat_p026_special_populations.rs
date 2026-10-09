@@ -1,14 +1,20 @@
-//! # YAT-P026: Simulación en Poblaciones Especiales
+//! # YAT-P026: Modelado Farmacocinético Teórico In Silico
 //!
-//! - Paciente Pediátrico (6 años, 20 kg)
-//! - Paciente con Insuficiencia Renal (GFR < 30 mL/min)
+//! AVISO: INVESTIGACIÓN EXCLUSIVAMENTE - NO PARA USO CLÍNICO NI DOSIFICACIÓN.
+//! Este script es un modelo computacional matemático exploratorio in silico.
+//! No posee validación clínica ni regulatoria. No debe usarse para guiar
+//! intervenciones médicas, diagnósticos ni dosificación en pacientes.
+//!
+//! Escenarios simulados:
+//! - Modelo pediátrico teórico (6 años, 20 kg)
+//! - Modelo de función renal reducida (GFR < 30 mL/min)
 
 use std::f64::consts::E;
 
 fn main() {
     println!("═══════════════════════════════════════════════════════════════════════════════");
-    println!("   YAT-P026: SIMULACIÓN EN POBLACIONES ESPECIALES");
-    println!("   HumanBrain + PIRS+LIRS Engine");
+    println!("   YAT-P026: MODELO FARMACOCINÉTICO IN SILICO (INVESTIGACIÓN)");
+    println!("   [AVISO: MODELO MATEMÁTICO TEÓRICO - SIN VALIDACIÓN CLÍNICA]");
     println!("═══════════════════════════════════════════════════════════════════════════════\n");
 
     // ═══════════════════════════════════════════════════════════════
@@ -250,69 +256,69 @@ fn simulate_renal_impairment() {
     // Duración con IRC
     let duration_renal = half_life_renal * 2.0;
 
-    println!("   ⏱️  DURACIÓN EFECTIVA: {:.1} horas (con dosis ajustada)", duration_renal);
-    println!("   📊 Similar a paciente normal debido al ajuste de dosis\n");
+    println!("   ⏱️  DURACIÓN SIMULADA: {:.1} horas (con parámetro de dosis ajustado)", duration_renal);
+    println!("   📊 Comportamiento del modelo con ajuste de parámetros\n");
 
     // Seguridad en IRC
-    println!("   ✅ PERFIL DE SEGURIDAD EN INSUFICIENCIA RENAL:\n");
+    println!("   ✅ HIPÓTESIS FARMACOCINÉTICA EN MODELO DE FUNCIÓN RENAL REDUCIDA (IN SILICO):\n");
     println!("   ┌────────────────────────────────────────────────────────────────────┐");
-    println!("   │ ✓ Metabolitos glucurónidos son INACTIVOS (no toxicidad)           │");
-    println!("   │ ✓ M1 (activo) se acumula moderadamente pero es seguro             │");
-    println!("   │ ✓ Sin nefrotoxicidad directa                                      │");
-    println!("   │ ✓ No requiere ajuste en diálisis (Vd alto, no dializable)         │");
-    println!("   │ ✓ TI preservado: 200 (margen amplio incluso con acumulación)      │");
+    println!("   │ • Hipótesis: Metabolitos glucurónidos inactivos en modelo          │");
+    println!("   │ • Hipótesis: M1 activo con acumulación en clearance reducido       │");
+    println!("   │ • Hipótesis: Sin nefrotoxicidad formulada en ecuaciones            │");
+    println!("   │ • Vd asignado alto (2.5 L/kg) en modelo matemático                 │");
+    println!("   │ • TI teórico asignado: 200 (modelo in silico)                      │");
     println!("   │                                                                    │");
-    println!("   │ ⚠️ Precaución: Monitorizar sedación prolongada                     │");
-    println!("   │ ⚠️ Evitar dosis repetidas sin evaluar nivel de consciencia        │");
+    println!("   │ ⚠️ AVISO: Hipótesis no validadas en humanos ni modelos animales.   │");
+    println!("   │ ⚠️ No apto para dosificación clínica ni toma de decisiones.        │");
     println!("   └────────────────────────────────────────────────────────────────────┘\n");
 
-    // Recomendación para diálisis
-    println!("   🔄 CONSIDERACIONES PARA PACIENTES EN DIÁLISIS:\n");
-    println!("   • YAT-P026 tiene Vd = 2.5 L/kg → NO dializable significativamente");
-    println!("   • Unión a proteínas 80% → Baja eliminación por HD/HDF");
-    println!("   • No se requiere dosis suplementaria post-diálisis");
-    println!("   • Metabolitos glucurónidos se eliminan parcialmente por diálisis (beneficioso)");
+    // Hipótesis para diálisis
+    println!("   🔄 HIPÓTESIS MATEMÁTICAS EN CONDICIÓN DE DIÁLISIS (IN SILICO):\n");
+    println!("   • Modelo asume Vd = 2.5 L/kg → baja depuración teórica por diálisis");
+    println!("   • Unión a proteínas teórica 80% en parámetros del modelo");
+    println!("   • [AVISO: Cálculos teóricos; sin respaldo de estudios clínicos]");
 }
 
 fn print_population_comparison() {
     println!("\n═══════════════════════════════════════════════════════════════════════════════");
-    println!("   COMPARACIÓN DE POBLACIONES: YAT-P026");
+    println!("   COMPARACIÓN DE ESCENARIOS POBLACIONALES EN MODELO: YAT-P026");
+    println!("   [AVISO: INVESTIGACIÓN EXCLUSIVAMENTE - SIN APLICACIÓN CLÍNICA]");
     println!("═══════════════════════════════════════════════════════════════════════════════\n");
 
     println!("   ┌─────────────────────┬─────────────┬─────────────┬─────────────────────┐");
     println!("   │ Parámetro           │ Adulto      │ Pediátrico  │ IRC Estadio 4       │");
     println!("   │                     │ (70 kg)     │ (20 kg, 6a) │ (GFR 25)            │");
     println!("   ├─────────────────────┼─────────────┼─────────────┼─────────────────────┤");
-    println!("   │ Dosis (mg/kg)       │ 2.86        │ 2.86        │ 0.86 (↓70%)         │");
-    println!("   │ Dosis total (mg)    │ 200         │ 57          │ 60                  │");
-    println!("   │ t½ (h)              │ 2.1         │ 1.6 (↓24%)  │ 6.2 (↑195%)         │");
-    println!("   │ Duración (h)        │ 4.0         │ 3.2         │ 4.0*                │");
-    println!("   │ C0 (μg/mL)          │ 1.14        │ 0.95        │ 0.34                │");
-    println!("   │ TI                  │ 200         │ 200         │ 200                 │");
-    println!("   │ Ajuste necesario    │ No          │ Peso        │ Dosis ↓70%          │");
+    println!("   │ Dosis teórica       │ 2.86 mg/kg  │ 2.86 mg/kg  │ 0.86 mg/kg (↓70%)   │");
+    println!("   │ Dosis total modelo  │ 200 mg      │ 57 mg       │ 60 mg               │");
+    println!("   │ t½ modelo (h)       │ 2.1         │ 1.6 (↓24%)  │ 6.2 (↑195%)         │");
+    println!("   │ Duración modelo (h) │ 4.0         │ 3.2         │ 4.0*                │");
+    println!("   │ C0 modelo (μg/mL)   │ 1.14        │ 0.95        │ 0.34                │");
+    println!("   │ TI asignado         │ 200         │ 200         │ 200                 │");
+    println!("   │ Ajuste en modelo    │ Base        │ Peso        │ Parámetro ↓70%      │");
     println!("   └─────────────────────┴─────────────┴─────────────┴─────────────────────┘");
-    println!("   * Con dosis ajustada\n");
+    println!("   * Con parámetro de dosis ajustado\n");
 
-    println!("   📋 RESUMEN DE RECOMENDACIONES:\n");
+    println!("   📋 ESCENARIOS TEÓRICOS DE MODELADO FARMACOCINÉTICO (IN SILICO, NO CLÍNICO):\n");
     println!("   ┌────────────────────────────────────────────────────────────────────────┐");
-    println!("   │ POBLACIÓN           │ DOSIS           │ MONITORIZACIÓN                │");
+    println!("   │ MODELO ESCENARIO    │ DOSIS SIMULADA  │ SEGUIMIENTO TEÓRICO EN MODELO │");
     println!("   ├─────────────────────┼─────────────────┼───────────────────────────────┤");
-    println!("   │ Adulto sano         │ 2.86 mg/kg IV   │ Estándar                      │");
-    println!("   │ Pediátrico          │ 2.86 mg/kg IV   │ EEG + despertar más rápido    │");
-    println!("   │ IRC leve (GFR>60)   │ Sin ajuste      │ Estándar                      │");
-    println!("   │ IRC moderada (30-60)│ ↓30% dosis      │ Sedación prolongada           │");
-    println!("   │ IRC severa (<30)    │ ↓70% dosis      │ Sedación + nivel consciencia  │");
-    println!("   │ Diálisis            │ ↓70% dosis      │ No suplementar post-HD        │");
-    println!("   │ Insuf. hepática     │ ↓50% dosis      │ Metabolismo reducido          │");
+    println!("   │ Adulto referencia   │ 2.86 mg/kg IV   │ Perfil base                   │");
+    println!("   │ Pediátrico teórico  │ 2.86 mg/kg IV   │ Clearance aumentado           │");
+    println!("   │ Tasa GFR > 60       │ Parámetro base  │ Sin ajuste                    │");
+    println!("   │ Tasa GFR 30-60      │ ↓30% parámetro  │ Eliminación reducida          │");
+    println!("   │ Tasa GFR < 30       │ ↓70% parámetro  │ Eliminación reducida          │");
+    println!("   │ Diálisis teórica    │ ↓70% parámetro  │ No dializable en modelo       │");
+    println!("   │ Función hepática ↓  │ ↓50% parámetro  │ Metabolismo reducido          │");
     println!("   └─────────────────────┴─────────────────┴───────────────────────────────┘\n");
 
-    println!("   ✅ CONCLUSIÓN:\n");
-    println!("   YAT-P026 demuestra un perfil farmacocinético PREDECIBLE en todas las");
-    println!("   poblaciones especiales, con ajustes de dosis LÓGICOS basados en:");
-    println!("   • Clearance total (hepático + renal)");
-    println!("   • Sin metabolitos tóxicos activos");
-    println!("   • Índice terapéutico preservado (TI = 200)");
+    println!("   ✅ RESUMEN DEL MODELO TEÓRICO:\n");
+    println!("   El modelo in silico de YAT-P026 produce proyecciones algebraicas dependientes");
+    println!("   de los parámetros asignados a cada escenario poblacional:");
+    println!("   • Clearance total algebraico (hepático + renal)");
+    println!("   • Ausencia de metabolitos reactivos en la formulación lógica");
+    println!("   • Índice terapéutico asignado en el modelo (TI = 200)");
     println!();
-    println!("   🔬 Todos los cálculos derivados de REGLAS LÓGICAS (PIRS+LIRS),");
-    println!("      no de predicciones probabilísticas de ML.");
+    println!("   🔬 Cálculos computacionales basados en reglas lógicas (PIRS+LIRS).");
+    println!("      [AVISO: Sin validación experimental ni clínica en seres humanos.]");
 }

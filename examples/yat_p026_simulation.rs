@@ -1,19 +1,21 @@
-//! # Simulación de YAT-P026 en HumanBrain
+//! # Simulación Conceptual de YAT-P026 en HumanBrain
 //!
-//! Anestésico perfecto: 100% hipnótico, 100% amnésico, 4h duración, 0 toxicidad
+//! AVISO DE INVESTIGACIÓN: Este script es un modelo conceptual exploratorio in silico.
+//! NO representa una simulación clínica validada ni mide consciencia biológica.
+//! Los indicadores son aproximaciones heurísticas no validadas experimentalmente.
 //!
-//! Simula los efectos sobre:
-//! - Corteza cerebral (pérdida de consciencia)
-//! - Hipocampo (amnesia anterógrada)
-//! - GABA-A (mecanismo de acción)
-//! - Oscilaciones cerebrales (delta waves durante anestesia)
+//! Simula efectos modelados sobre:
+//! - Actividad de circuitos tálamo-corticales
+//! - Circuitos hipocampales
+//! - Conductancia GABA-A (modelo biofísico simplificado)
+//! - Oscilaciones representativas de red
 
 use std::f64::consts::E;
 
 fn main() {
     println!("═══════════════════════════════════════════════════════════════════════════════");
-    println!("   SIMULACIÓN HUMANBRAIN: YAT-P026");
-    println!("   Anestésico Perfecto - 100% Hipnótico | 100% Amnésico | 4h | Toxicidad 0");
+    println!("   SIMULACIÓN CONCEPTUAL IN SILICO: YAT-P026");
+    println!("   [AVISO: INVESTIGACIÓN EXCLUSIVAMENTE - SIN VALIDACIÓN CLÍNICA NI MÉDICA]");
     println!("═══════════════════════════════════════════════════════════════════════════════\n");
 
     // ═══════════════════════════════════════════════════════════════
@@ -227,7 +229,7 @@ struct YatP026 {
 }
 
 struct BrainState {
-    consciousness_level: f64,      // 1.0 = despierto, 0.0 = inconsciencia profunda
+    consciousness_level: f64,      // Proxy de actividad tálamo-cortical (1.0 = baseline alta, 0.0 = atenuación profunda; no consciencia biológica)
     sedation_score: f64,
     amnesia_score: f64,
     cortical_activity: f64,
@@ -257,10 +259,10 @@ impl BrainState {
         // Hipocampo afectado para amnesia
         self.hippocampal_function = 1.0 - amnesia_effect * 0.98;
 
-        // Consciencia depende del circuito tálamo-cortical
+        // Heurística de acoplamiento tálamo-cortical (proxy numérico, no consciencia ontológica)
         self.consciousness_level = (self.cortical_activity * self.thalamic_relay).sqrt();
 
-        // Scores clínicos
+        // Scores heurísticos in silico
         self.sedation_score = 1.0 - self.consciousness_level;
         self.amnesia_score = 1.0 - self.hippocampal_function;
     }
@@ -292,8 +294,8 @@ struct SafetyMetrics {
 fn calculate_regional_effects(_drug: &YatP026, concentration: f64) -> Vec<(&'static str, f64, &'static str)> {
     // Efectos basados en densidad de receptores GABA-A α1 por región
     vec![
-        ("Corteza prefrontal", 0.92, "Pérdida de decisiones conscientes"),
-        ("Corteza parietal", 0.88, "Pérdida de integración sensorial"),
+        ("Corteza prefrontal", 0.92, "Atenuación de actividad prefrontal en modelo"),
+        ("Corteza parietal", 0.88, "Atenuación de integración sensorial en modelo"),
         ("Tálamo", 0.95, "Bloqueo tálamo-cortical"),
         ("Hipocampo", 0.98, "Amnesia anterógrada completa"),
         ("Amígdala", 0.75, "Supresión respuesta emocional"),

@@ -1,8 +1,7 @@
-//! Advanced ion channel models with diverse kinetics and biological realism.
+//! Advanced ion channel models with diverse Hodgkin-Huxley kinetics.
 //!
-//! This module implements 15+ specialized ion channels found in different neuronal
-//! compartments (soma, dendrites, axon initial segment) with realistic kinetics
-//! from experimental data.
+//! This module implements specialized ion channels modeled for different neuronal
+//! compartments (soma, dendrites, axon initial segment) with literature-referenced kinetics.
 
 use serde::{Deserialize, Serialize};
 

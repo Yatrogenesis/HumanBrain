@@ -1,5 +1,10 @@
 # YAT-PV-CZTS: Earth-Abundant Kesterite Photovoltaic Material Designed by Deterministic Inference Engine
 
+> **RESEARCH NOTICE / COMPUTATIONAL MODELING STUDY**:
+> This paper presents a theoretical materials screening and optimization study conducted via the Deterministic Drug Discovery Engine (DDDE) adapted for materials science.
+> All efficiency figures cited from experimental work (e.g. 12.6% IBM record) represent published literature benchmarks, not in-house experimental measurements.
+> Material selections, FoM rankings, and synthesis protocols are computational proposals intended for future experimental verification.
+
 **Authors:** Yatrogenesis Research Group
 **Affiliation:** Yatrogenesis Materials Science Division
 **Correspondence:** research@yatrogenesis.io
@@ -9,13 +14,13 @@
 
 ## Abstract
 
-**Background:** Current photovoltaic technologies rely on scarce elements (In, Ga, Te) or toxic materials (Cd, Pb). We report the deterministic design and fabrication protocol optimization of YAT-PV-CZTS (Cu₂ZnSnS₄), an earth-abundant kesterite solar cell material generated using the Deterministic Drug Discovery Engine (DDDE) adapted for materials science.
+**Background:** Current photovoltaic technologies rely on scarce elements (In, Ga, Te) or toxic materials (Cd, Pb). We report the deterministic computational design and protocol optimization analysis of YAT-PV-CZTS (Cu₂ZnSnS₄), an earth-abundant kesterite solar cell candidate evaluated using the Deterministic Drug Discovery Engine (DDDE) adapted for materials science.
 
-**Methods:** DDDE performed combinatorial exploration of 50 photovoltaic material candidates across perovskite, chalcopyrite, and kesterite structures. Candidates were filtered by bandgap (0.9-2.0 eV), theoretical efficiency (≥15%), stability (≥70%), and toxicity (≤50%). Three fabrication methods (sol-gel, sputtering, nanoparticle ink) were evaluated by logical inference.
+**Methods:** DDDE performed combinatorial exploration of 50 photovoltaic material candidates across perovskite, chalcopyrite, and kesterite structures. Candidates were filtered by bandgap (0.9-2.0 eV), theoretical efficiency (≥15%), stability (≥70%), and toxicity (≤50%). Three fabrication methods (sol-gel, sputtering, nanoparticle ink) were evaluated by logical inference against literature performance criteria.
 
-**Results:** Cu₂ZnSnS₄ emerged as the optimal material with: (1) 1.50 eV bandgap, (2) 25% theoretical efficiency, (3) 5% toxicity score, (4) $40/m² fabrication cost. The nanoparticle ink method with selenization achieved the highest practical efficiency (12.6%), while sol-gel offered the best cost-performance ratio for laboratory scale.
+**Results:** Cu₂ZnSnS₄ emerged as the optimal material with: (1) 1.50 eV bandgap, (2) 25% theoretical Shockley-Queisser efficiency, (3) 5% toxicity score, (4) $40/m² projected fabrication cost. Literature review benchmarked the nanoparticle ink method with selenization at the highest reported efficiency (12.6% IBM record), while sol-gel offered the best cost-performance ratio for laboratory-scale exploration.
 
-**Conclusions:** DDDE successfully identified CZTS as the optimal earth-abundant photovoltaic material and generated complete fabrication protocols. This demonstrates the applicability of deterministic inference beyond pharmaceuticals to materials science.
+**Conclusions:** DDDE successfully identified CZTS as an optimal earth-abundant photovoltaic candidate and structured reproducible fabrication protocols from literature constraints. This demonstrates the applicability of deterministic inference beyond pharmaceuticals to materials science exploration.
 
 **Keywords:** Photovoltaics, kesterite, CZTS, earth-abundant, solar cells, deterministic design, thin-film
 

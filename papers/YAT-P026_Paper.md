@@ -1,4 +1,8 @@
-# YAT-P026: A Novel General Anesthetic with Optimized Hypnotic-Amnestic Profile Designed by Deterministic Drug Discovery Engine
+# YAT-P026: A Novel Theoretical Anesthetic Model Designed by Deterministic Drug Discovery Engine
+
+> [!WARNING]
+> **RESEARCH USE ONLY — NOT FOR CLINICAL USE — NO CLINICAL VALIDATION**
+> This manuscript describes theoretical computational models and hypothetical molecular designs generated in silico. YAT-P026 is an unvalidated computational hypothesis; it has NOT undergone chemical synthesis, in vitro testing, animal studies, or human clinical trials. Nothing herein constitutes clinical, diagnostic, therapeutic, or regulatory advice, nor does it establish clinical efficacy or safety in patients.
 
 **Authors:** Yatrogenesis Research Group
 **Affiliation:** Yatrogenesis Computational Pharmacology Division
@@ -9,15 +13,15 @@
 
 ## Abstract
 
-**Background:** Current general anesthetics suffer from narrow therapeutic indices, unpredictable duration, and incomplete amnesia. We report the design and *in silico* validation of YAT-P026, a novel α1-GABA-A selective anesthetic generated using a proprietary Deterministic Drug Discovery Engine (DDDE).
+**Background:** Current general anesthetics suffer from narrow therapeutic indices and unpredictable durations. We report the theoretical design and *in silico* exploratory modeling of YAT-P026, a hypothetical α1-GABA-A selective molecular construct generated using the Deterministic Drug Discovery Engine (DDDE).
 
-**Methods:** YAT-P026 was designed using DDDE, a rule-based logical inference system that generates molecular candidates through exhaustive combinatorial exploration constrained by pharmacological axioms. The compound was validated using HumanBrain, a multi-compartmental neural simulator with regional receptor distribution.
+**Methods:** YAT-P026 was designed using DDDE, a rule-based logical inference system exploring combinatorial molecular configurations constrained by pharmacological axioms. The candidate was simulated using HumanBrain, a multi-compartmental neural simulator with regional receptor distribution models.
 
-**Results:** YAT-P026 (2,6-dimethyl-4-methoxy-fluorophenylethanolamine) demonstrated: (1) 94% α1-GABA-A efficacy, (2) complete anterograde amnesia, (3) 4.0-4.2 hour duration, (4) therapeutic index of 200, and (5) zero toxic metabolites. Simulations in pediatric (6y, 20kg) and severe renal impairment (GFR 25 mL/min) populations showed predictable pharmacokinetic adjustments with preserved safety margins.
+**Results:** Model outputs for YAT-P026 (2,6-dimethyl-4-methoxy-fluorophenylethanolamine) produced in silico values (unverified theoretical predictions): (1) 94% α1-GABA-A modeled efficacy, (2) complete hippocampal inhibition proxy, (3) 4.0-4.2 hour modeled duration, (4) therapeutic index parameter of 200, and (5) zero reactive metabolites identified by rule filtering. Simulations in pediatric (6y, 20kg model) and severe renal impairment (GFR 25 mL/min model) scenarios demonstrated algebraic clearance adjustments based on model parameters.
 
-**Conclusions:** YAT-P026 represents a new class of "designed anesthetics" with superior safety and predictability profiles. The DDDE approach demonstrates that deterministic logical inference can substitute probabilistic machine learning for drug candidate generation in structured pharmacological domains.
+**Conclusions:** YAT-P026 illustrates a conceptual in silico exploration of deterministic rule-based molecular candidate generation (unverified hypothesis; requires chemical synthesis and physical biological validation).
 
-**Keywords:** General anesthesia, GABA-A, drug design, deterministic inference, therapeutic index, pharmacokinetic modeling
+**Keywords:** General anesthesia modeling, GABA-A, drug design, deterministic inference, therapeutic index, pharmacokinetic modeling
 
 ---
 
@@ -84,18 +88,18 @@ Total search space: 4 × 8 × 7 = 224 candidates
 
 After applying all constraints, **54 candidates** satisfied every requirement. Candidates were ranked by therapeutic index, and YAT-P026 emerged as the optimal compound.
 
-### 2.3 In Silico Validation
+### 2.3 In Silico Simulation Protocol
 
-YAT-P026 was validated using **HumanBrain**, a multi-compartmental neural simulator implementing:
+YAT-P026 was evaluated in silico using **HumanBrain**, a multi-compartmental neural simulator implementing:
 - Anatomically distributed GABA-A receptor densities
 - Regional pharmacodynamic modeling (cortex, thalamus, hippocampus, brainstem)
 - EEG oscillation patterns
 - Pharmacokinetic two-compartment modeling
 
 Simulations were performed for:
-1. Adult reference population (70 kg)
-2. Pediatric population (6 years, 20 kg)
-3. Severe renal impairment (GFR 25 mL/min/1.73m²)
+1. Adult reference population model (70 kg)
+2. Pediatric population model (6 years, 20 kg)
+3. Severe renal impairment model (GFR 25 mL/min/1.73m²)
 
 ---
 
@@ -129,7 +133,7 @@ Simulations were performed for:
 
 ### 3.2 Adult Population Simulation
 
-**Dosing:** 200 mg IV (2.86 mg/kg for 70 kg patient)
+**Simulated Dose Parameter:** 200 mg IV (model parameter equivalent to 2.86 mg/kg for 70 kg model subject)
 
 **Pharmacokinetics:**
 
@@ -142,8 +146,8 @@ Simulations were performed for:
 
 **Temporal Profile:**
 
-| Time (h) | Concentration (μg/mL) | GABA-A Effect | Clinical State |
-|----------|----------------------|---------------|----------------|
+| Time (h) | Concentration (μg/mL) | GABA-A Effect | Simulated State Proxy |
+|----------|----------------------|---------------|-----------------------|
 | 0.0 | 1.14 | 79% | Deep sedation |
 | 1.0 | 0.82 | 69% | Deep sedation |
 | 2.0 | 0.59 | 55% | Moderate sedation |
@@ -155,11 +159,11 @@ Simulations were performed for:
 
 **Regional Brain Effects (at peak):**
 
-| Region | Inhibition | Clinical Effect |
-|--------|------------|-----------------|
-| Hippocampus | 98% | Complete anterograde amnesia |
+| Region | Inhibition | Model Outcome Proxy |
+|--------|------------|---------------------|
+| Hippocampus | 98% | Hippocampal suppression (amnesia proxy) |
 | Thalamus | 95% | Thalamocortical disconnection |
-| Prefrontal cortex | 92% | Loss of conscious processing |
+| Prefrontal cortex | 92% | Prefrontal activity attenuation |
 | Brainstem | 15% | Vital reflexes preserved |
 | Respiratory center | 9% | Minimal depression |
 
@@ -174,17 +178,17 @@ Simulations were performed for:
 | Dose (mg/kg) | 2.86 | 2.86 | No change |
 | Duration (h) | 4.0 | 3.2 | Faster elimination |
 
-**Clinical Implications:**
-- Same weight-based dosing
-- Faster awakening (predictable)
-- Maintenance infusion recommended for procedures >3h
-- Safety profile preserved (TI = 200)
+**Computational Modeling Observations (Hypothetical, Non-Clinical):**
+- Same simulated weight-based dosing parameter
+- Faster emergence in pediatric kinetic model
+- Simulation suggests maintenance infusion parameter for procedures >3h
+- Theoretical safety profile preserved in model (TI = 200)
 
-### 3.4 Severe Renal Impairment (GFR 25 mL/min)
+### 3.4 Severe Renal Impairment Model (GFR 25 mL/min)
 
 **Pharmacokinetic Impact:**
 
-YAT-P026 is 85% renally excreted as inactive glucuronide metabolites.
+YAT-P026 is modeled as 85% renally excreted as inactive glucuronide metabolites.
 
 | Parameter | Normal | IRC Stage 4 | Change |
 |-----------|--------|-------------|--------|
@@ -192,10 +196,10 @@ YAT-P026 is 85% renally excreted as inactive glucuronide metabolites.
 | Total clearance | 100% | 33% | ↓67% |
 | t½ (h) | 2.1 | 6.4 | ↑206% |
 
-**Dose Adjustment:**
+**Simulated Dose Adjustment:**
 
-| GFR (mL/min) | Dose Adjustment |
-|--------------|-----------------|
+| GFR (mL/min) | Simulated Parameter Adjustment |
+|--------------|--------------------------------|
 | >60 | None |
 | 30-60 | ↓30% |
 | <30 | ↓70% |
@@ -209,17 +213,17 @@ YAT-P026 is 85% renally excreted as inactive glucuronide metabolites.
 | M3 (N-glucuronide) | Inactive | High (no toxicity) |
 | M5 (O-glucuronide) | Inactive | High (no toxicity) |
 
-**Key Finding:** Inactive glucuronide metabolites accumulate but pose no toxicity risk. Active metabolite (M1) accumulation is manageable with dose reduction.
+**Key Finding:** In silico analysis suggests inactive glucuronide metabolites accumulate with low toxicity risk in the model. Active metabolite (M1) accumulation is modeled to be manageable with parameter reduction.
 
 ### 3.5 Safety Profile
 
-**Therapeutic Index Comparison:**
+**Therapeutic Index Comparison (Theoretical Model Ratios):**
 
-| Agent | TI | YAT-P026 Advantage |
-|-------|----|--------------------|
-| Propofol | 10 | 20× safer |
-| Midazolam | 20 | 10× safer |
-| Ketamine | 15 | 13× safer |
+| Agent | TI | YAT-P026 Ratio (Model) |
+|-------|----|-------------------------|
+| Propofol | 10 | 20× relative TI (theoretical) |
+| Midazolam | 20 | 10× relative TI (theoretical) |
+| Ketamine | 15 | 13× relative TI (theoretical) |
 | **YAT-P026** | **200** | Reference |
 
 **Metabolism and Toxicity:**
@@ -307,17 +311,17 @@ DDDE consists of two integrated components:
 **Component B (Neural Simulator):**
 - Multi-compartmental brain model with regional specificity
 - Implements pharmacokinetic/pharmacodynamic coupling
-- Simulates temporal drug effects including EEG patterns
-- Validates candidates against clinical outcome targets
+- Simulates temporal drug effects including modeled EEG patterns
+- Evaluates candidates against target simulation profiles
 
-### 6.2 Validation Framework
+### 6.2 Reference Calibration Framework
 
-DDDE outputs were validated against:
+DDDE model profiles were calibrated against published reference data:
 - Known drug properties (propofol, midazolam, ketamine)
 - Published pharmacokinetic parameters
-- Clinical duration and effect profiles
+- Clinical duration and effect profiles from literature
 
-Concordance with literature values exceeded 95% for all validated compounds.
+Simulation profiles showed close concordance with literature benchmarks across modeled compounds (*in silico* exploratory model; not a clinical or experimental trial validation).
 
 ---
 
@@ -331,7 +335,7 @@ The authors are affiliated with Yatrogenesis, which holds intellectual property 
 
 ## Data Availability
 
-Simulation outputs and reasoning traces available upon request for regulatory review. DDDE source code is proprietary and not publicly available.
+Simulation outputs and reasoning traces are research artifacts available upon request. DDDE source code and internal models are proprietary research tools.
 
 ---
 
@@ -365,10 +369,10 @@ DDDE explored 144 formulation combinations across 8 vehicles and 6 penetration e
 | pH | 6.5 (triethanolamine) |
 | Preservative | Methylparaben 0.1% |
 
-### 7.3 Performance Profile
+### 7.3 Performance Profile (Simulated In Silico)
 
-| Parameter | Achieved | Target |
-|-----------|----------|--------|
+| Parameter | Achieved (Model) | Target |
+|-----------|------------------|--------|
 | Dermal absorption | 100% | ≥95% ✓ |
 | Local analgesia | 95.8% | ≥95% ✓ |
 | Hypnotic effect | 89.3% | ≥90% ○ |
@@ -405,33 +409,34 @@ Dermis (1-2 mm)
 Systemic circulation: 5% (MINIMAL - retained locally)
 ```
 
-### 7.5 Clinical Applications
+### 7.5 Potential Research Directions (Hypothetical In Silico Concepts, Non-Clinical)
 
-**Indications:**
-- Local surgical anesthesia
-- Minor dermatological procedures
-- Venipuncture/IV cannulation
-- Wound dressing changes
-- Procedural sedation (topical)
+*Notice: YAT-P026-T is an unverified computational molecule design. The following areas represent exploratory modeling concepts, not therapeutic indications or clinical dosing guidelines.*
 
-**Dosing:**
-- Apply 1-2 g per 10 cm² area
-- Cover with occlusive dressing
-- Wait 11 minutes for onset
-- Effect duration: 5.9 hours
-- Maximum area: 400 cm²
+**Exploratory Modeling Scenarios:**
+- Local procedural analgesia models
+- Minor dermatological barrier models
+- Venipuncture simulation
+- Wound dressing contact simulation
 
-### 7.6 Advantages over EMLA (Lidocaine/Prilocaine)
+**Hypothetical Simulation Parameters (Not For Administration):**
+- Modeled application: 1-2 g per 10 cm² area
+- Occlusive barrier model
+- Modeled onset: ~11 minutes
+- Modeled duration: ~5.9 hours
+- Maximum modeled area: 400 cm²
 
-| Parameter | YAT-P026-T | EMLA |
-|-----------|------------|------|
-| Onset | 11 min | 60 min |
-| Duration | 5.9 h | 2 h |
-| Depth of anesthesia | Deep (dermis) | Superficial |
-| Amnestic effect | Yes (93%) | No |
-| Hypnotic effect | Yes (89%) | No |
-| Methemoglobinemia risk | None | Yes (prilocaine) |
-| Toxic metabolites | 0 | Present |
+### 7.6 Theoretical Comparison with EMLA (Lidocaine/Prilocaine) Reference Profile
+
+| Parameter | YAT-P026-T (In Silico) | EMLA (Literature Reference) |
+|-----------|------------------------|-----------------------------|
+| Onset | 11 min (model) | 60 min |
+| Duration | 5.9 h (model) | 2 h |
+| Depth of anesthesia | Modeled dermis penetration | Superficial |
+| Amnestic effect | Yes (93% model proxy) | No |
+| Hypnotic effect | Yes (89% model proxy) | No |
+| Methemoglobinemia risk | None (modeled structure) | Yes (prilocaine) |
+| Toxic metabolites | 0 predicted in model | Present |
 
 ---
 

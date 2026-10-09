@@ -138,7 +138,7 @@ C:/Users/alrom/HumanBrain/
 - `crates/cerebellum/` - Motor learning (stub)
 - `crates/connectivity/` - White matter tracts (stub)
 - `crates/cognition/` - Working memory, attention (stub)
-- `crates/consciousness/` - IIT 3.0 (stub)
+- `crates/consciousness/` - Information integration measures (IIT 3.0 metric placeholder; measure of information integration, not consciousness)
 - `crates/visualization/` - 3D rendering (stub)
 - `crates/cli/` - Command-line interface (stub)
 
@@ -152,15 +152,15 @@ Each brain component is an independent crate:
 - **Testability**: Each crate has comprehensive unit tests
 - **Scalability**: Easy to add new brain regions
 
-### Biological Realism
+### Model Subsystem Inventory
 
-**What's Accurate** (7.5/10 overall):
-- ✓ Multi-compartmental neurons (9/10)
-- ✓ Ion channel dynamics (9/10)
-- ✓ Synaptic plasticity (8/10)
-- ✓ Metabolic constraints (7/10)
-- ✓ Glial cell functions (7/10)
-- ✓ Cortical organization (8/10)
+**Biophysical Features**:
+- ✓ Multi-compartmental neurons (152 compartments)
+- ✓ Ion channel dynamics (Hodgkin-Huxley)
+- ✓ Synaptic plasticity models
+- ✓ Metabolic constraints (ATP dynamics)
+- ✓ Glial cell baseline models
+- ✓ Cortical organization templates
 
 **Simplifications**:
 - ⚠ Channel kinetics (Hodgkin-Huxley vs. Markov models)
@@ -170,9 +170,9 @@ Each brain component is an independent crate:
 
 ### Performance
 
-**Current Benchmarks**:
+**Current Exploratory Benchmarks**:
 - Single neuron (152 comp): ~50 μs/step
-- Cortical column (100,000 neurons): ~1.2 s/step (8 cores)
+- Cortical column (100,000 neurons): ~1.2 s/step (8 cores, projected theoretical scaling; unverified)
 - Real-time factor: 120,000x slower
 
 **Optimization Strategies**:
@@ -358,89 +358,89 @@ Generates comprehensive API documentation for all crates.
 ### Guides
 
 1. **README.md** - Project overview, features, installation
-2. **ARCHITECTURE.md** - Design decisions, data structures
-3. **BIOLOGICAL_ACCURACY.md** - Validation, simplifications
-4. **BENCHMARKS.md** - Performance metrics
-5. **GETTING_STARTED.md** - Tutorials, common patterns
+2. **Architecture.md** - Design decisions, data structures
+3. **Biological_Accuracy.md** - Model scope, literature comparisons
+4. **Benchmarks.md** - Performance metrics
+5. **Getting_Started.md** - Tutorials, common patterns
 
-## Validation
+## Nominal Parameter Literature Ranges
 
 ### Firing Rates
 
-| Cell Type | Experimental | Model | ✓ |
-|-----------|-------------|-------|---|
-| Pyramidal | 0.5-10 Hz | 0.5-10 Hz | ✓ |
-| PV interneuron | 10-50 Hz | 10-50 Hz | ✓ |
+| Cell Type | Experimental Range | Model Nominal | Match |
+|-----------|-------------------|---------------|-------|
+| Pyramidal | 0.5-10 Hz | 0.5-10 Hz | Reference range |
+| PV interneuron | 10-50 Hz | 10-50 Hz | Reference range |
 
 ### Synaptic Properties
 
-| Property | Experimental | Model | ✓ |
-|----------|-------------|-------|---|
-| EPSP amplitude | 0.1-2 mV | 0.1-2 mV | ✓ |
-| STDP window | ±20 ms | ±20 ms | ✓ |
+| Property | Experimental Range | Model Nominal | Match |
+|----------|-------------------|---------------|-------|
+| EPSP amplitude | 0.1-2 mV | 0.1-2 mV | Reference range |
+| STDP window | ±20 ms | ±20 ms | Reference range |
 
 ### Metabolic Properties
 
-| Property | Experimental | Model | ✓ |
-|----------|-------------|-------|---|
-| ATP concentration | 2-3 mM | 2-3 mM | ✓ |
-| Spike cost | 10^9 ATP | 10^9 ATP | ✓ |
+| Property | Experimental Range | Model Nominal | Match |
+|----------|-------------------|---------------|-------|
+| ATP concentration | 2-3 mM | 2-3 mM | Reference range |
+| Spike cost | 10^9 ATP | 10^9 ATP | Reference range |
 
-## Scientific Impact
+## Scope & Applications
 
-### Novel Features
+### Implemented Capabilities
 
-1. **First accessible brain simulator with metabolic constraints**
-   - Captures energy limits on neural activity
-   - Models neurovascular coupling
-   - Realistic for studying metabolic diseases
+1. **Metabolic constraints on neural activity**
+   - Energy limits on neural firing rates
+   - Neurovascular coupling models
+   - Metabolic stress simulation concepts
 
-2. **First with glial cell dynamics**
+2. **Glial cell dynamics models**
    - Astrocyte glutamate uptake
    - K+ buffering
-   - Synaptic pruning by microglia
+   - Microglial synaptic pruning models
 
-3. **Modern software engineering**
-   - Memory-safe Rust
-   - Modular architecture
-   - Comprehensive testing
+3. **Software Architecture**
+   - Memory-safe Rust implementation
+   - Modular architecture across independent crates
+   - Unit tests for core equations
 
 ### Applications
 
 1. **Computational neuroscience research**
    - Test hypotheses about neural dynamics
-   - Explore emergent properties
-   - Validate against experimental data
+   - Explore emergent properties in network models
+   - Compare with literature reference data
 
 2. **Education**
-   - Teach principles of neural computation
-   - Demonstrate brain mechanisms
-   - Hands-on experimentation
+   - Study principles of biophysical computation
+   - Demonstrate multi-compartment dynamics
+   - Open-source experimentation
 
-3. **Drug development** (future)
-   - Model effects of metabolic interventions
-   - Test neuromodulator dynamics
-   - Simulate disease states
+3. **Pharmacological modeling exploration** (exploratory in silico research only)
+   - Explore receptor binding kinetics
+   - Test neuromodulator dynamics in silico
+   - Not for clinical or diagnostic applications
 
 ## Conclusion
 
-**HumanBrain** is a production-quality, biologically realistic brain simulator that successfully addresses the limitations identified in existing approaches. With **2,724 lines** of core implementation code, **24/24 tests passing**, and **comprehensive documentation**, it provides a solid foundation for computational neuroscience research and education.
+**HumanBrain** is a modular, multi-scale brain simulation framework implemented in Rust. With **2,724 lines** of initial implementation code, **24/24 tests passing**, and modular architectural crates, it provides a foundation for computational neuroscience research.
 
 ### Key Strengths
 
-1. ✓ **Multi-compartmental neurons** (most realistic)
-2. ✓ **Metabolic constraints** (unique feature)
-3. ✓ **Glial cell dynamics** (unique feature)
-4. ✓ **Modular architecture** (easy to extend)
-5. ✓ **Comprehensive testing** (100% passing)
-6. ✓ **Modern Rust** (safe, fast, parallel)
+1. ✓ **Multi-compartmental neurons** (cable equation dynamics)
+2. ✓ **Metabolic constraints** (ATP tracking)
+3. ✓ **Glial cell models** (homeostatic dynamics)
+4. ✓ **Modular architecture** (independent crates)
+5. ✓ **Unit test coverage** (100% passing tests)
+6. ✓ **Modern Rust** (safe, parallel computing)
 
 ### Next Steps
 
 1. Implement hippocampus (CA1, CA3, DG)
 2. Add GPU acceleration
 3. Create visualization tools
-4. Validate against experimental data
+4. Compare and verify against experimental reference data
 5. Scale to larger networks
 
 ---

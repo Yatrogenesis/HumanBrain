@@ -4,13 +4,13 @@ GPU compute backend for HumanBrain using WGPU (CUDA/Vulkan/Metal cross-platform 
 
 ## Overview
 
-This crate provides massively parallel computation for Hodgkin-Huxley neurons and cable equations targeting **100-400× speedup** over CPU.
+This crate provides GPU compute kernels for Hodgkin-Huxley neurons and cable equations using WGPU (CUDA/Vulkan/Metal cross-platform support).
 
-### Performance Target
+### Projected Performance Goals (Design Hypothesis - No verificado)
 
-- **Current CPU**: ~1:120,000 ratio (1 second simulation = 33 hours)
-- **GPU Target**: ~1:1 ratio (real-time simulation)
-- **Expected Speedup**: 100-400×
+- **Current CPU reference**: ~1:120,000 ratio (unverified exploratory estimate)
+- **GPU Target (Hypothesis)**: Exploratory design goal towards real-time simulation ratio (unverified)
+- **Projected Speedup**: Theoretical design hypothesis (pending systematic benchmark suite)
 
 ## Architecture
 
