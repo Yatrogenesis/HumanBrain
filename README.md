@@ -1,5 +1,9 @@
 # HumanBrain: GPU-Accelerated Multi-Scale Human Brain Simulator
 
+> **Status (November 2026):** this repository is the original 2025 version and is no longer maintained. It is kept
+> as the historical record of the project. Development continues in a new repository, private until its release.
+
+
 A computational neuroscience simulation framework implemented in Rust, with GPU-accelerated compartmental dynamics and multi-regional anatomical connectivity models.
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17720224.svg)](https://doi.org/10.5281/zenodo.17720224)
